@@ -9,7 +9,7 @@ Landing page moderna, responsiva y completamente interactiva para una empresa de
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Características](#características)
 - [Tecnologías](#tecnologías)
@@ -22,19 +22,19 @@ Landing page moderna, responsiva y completamente interactiva para una empresa de
 
 ---
 
-## ✨ Características
+## Características
 
-✅ **Diseño Moderno** - Inspirado en startups tech como Stripe, Vercel y Notion  
-✅ **Completamente Responsivo** - Mobile-first design para todos los dispositivos  
-✅ **Dark Mode** - Soporte completo de modo oscuro con persistencia en localStorage  
-✅ **Animaciones Suaves** - Transiciones y efectos visuales profesionales  
-✅ **Optimizado** - Carga rápida y rendimiento excelente  
-✅ **Accesible** - Cumple con estándares WCAG  
-✅ **Componentes Reutilizables** - Código limpio y modular  
+**Diseño Moderno** - Inspirado en startups tech como Stripe, Vercel y Notion  
+**Completamente Responsivo** - Mobile-first design para todos los dispositivos  
+**Dark Mode** - Soporte completo de modo oscuro con persistencia en localStorage  
+**Animaciones Suaves** - Transiciones y efectos visuales profesionales  
+**Optimizado** - Carga rápida y rendimiento excelente  
+**Accesible** - Cumple con estándares WCAG  
+**Componentes Reutilizables** - Código limpio y modular  
 
 ---
 
-## 🛠 Tecnologías
+## Tecnologías
 
 | Tecnología | Versión | Descripción |
 |-----------|---------|-------------|
@@ -46,7 +46,7 @@ Landing page moderna, responsiva y completamente interactiva para una empresa de
 
 ---
 
-## 📦 Instalación
+## Instalación
 
 ### Requisitos Previos
 - Node.js versión 14 o superior instalado
@@ -75,7 +75,7 @@ npm run dev
 
 ---
 
-## 🚀 Uso
+## Uso
 
 ### Comandos Disponibles
 
@@ -96,7 +96,7 @@ Después de ejecutar `npm run build`, se creará una carpeta `dist/` con los arc
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 iamtec-ai/
@@ -117,7 +117,7 @@ iamtec-ai/
 
 ---
 
-## 🎨 Funcionalidades
+## Funcionalidades
 
 ### 1. **Navegación Principal**
 - Navbar fija con efecto scroll
@@ -174,7 +174,7 @@ iamtec-ai/
 
 ---
 
-## 🎯 Personalización
+## Personalización
 
 ### Cambiar Colores
 
@@ -217,7 +217,7 @@ En `index.html`, busca la sección `#contacto` y actualiza:
 
 ---
 
-## 📱 Responsive Design
+## Responsive Design
 
 El sitio es completamente responsive:
 - **Mobile**: < 768px (optimizado para teléfonos)
@@ -226,7 +226,7 @@ El sitio es completamente responsive:
 
 ---
 
-## 🎬 Animaciones
+## Animaciones
 
 El sitio incluye múltiples animaciones:
 - **Fade In**: Aparición suave de elementos
@@ -237,7 +237,7 @@ El sitio incluye múltiples animaciones:
 
 ---
 
-## 🔧 Configuración Avanzada
+## Configuración Avanzada
 
 ### Modificar Puertos del Dev Server
 
@@ -261,7 +261,7 @@ VITE_AMBIENTE=producción
 
 ---
 
-## 📊 Rendimiento
+## Rendimiento
 
 - **Lighthouse Score**: 90+
 - **Time to Interactive**: < 1.5s
@@ -270,7 +270,7 @@ VITE_AMBIENTE=producción
 
 ---
 
-## 🚀 Despliegue
+## Despliegue
 
 ### Vercel (Recomendado)
 
@@ -307,7 +307,7 @@ npm run build
 
 ---
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Las contribuciones son bienvenidas. Para cambios importantes:
 
@@ -319,13 +319,13 @@ Las contribuciones son bienvenidas. Para cambios importantes:
 
 ---
 
-## 📝 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT - Ver el archivo LICENSE para más detalles.
 
 ---
 
-## 📧 Contacto y Soporte
+## Contacto y Soporte
 
 Para preguntas o sugerencias sobre el proyecto:
 - Email: info@iamtec.com
@@ -333,7 +333,7 @@ Para preguntas o sugerencias sobre el proyecto:
 
 ---
 
-## 🙏 Agradecimientos
+## Agradecimientos
 
 - Tailwind CSS por el excelente framework de CSS
 - Vite por el increíble build tool
@@ -342,7 +342,7 @@ Para preguntas o sugerencias sobre el proyecto:
 
 ---
 
-## 📈 Roadmap Futuro
+## Roadmap Futuro
 
 - [ ] Agregar blog integrado
 - [ ] Sistema de búsqueda de cursos
@@ -355,7 +355,7 @@ Para preguntas o sugerencias sobre el proyecto:
 
 ---
 
-## ⭐ Información Rápida
+## Información Rápida
 
 | Métrica | Valor |
 |--------|-------|
@@ -368,14 +368,14 @@ Para preguntas o sugerencias sobre el proyecto:
 
 ---
 
-**Hecho con ❤️ por IAMTEC - Tu Plataforma de Tecnología e Innovación**
+**Hecho con por IAMTEC - Tu Plataforma de Tecnología e Innovación**
 
 ```
-    ◆◆◆
-   ◆   ◆
+     ◆◆◆
+   ◆      ◆
   ◆ IAMTEC ◆
-   ◆   ◆
-    ◆◆◆
+   ◆      ◆
+     ◆◆◆
 ```
 
-Última actualización: Abril 2024
+Última actualización: Abril 2026

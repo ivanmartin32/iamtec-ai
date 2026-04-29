@@ -175,6 +175,76 @@ const tecnologias = [
   { nombre: 'Productividad', icono: 'fas fa-tasks' }
 ];
 
+const serviceActions = {
+  cursosInformaticos: {
+    type: 'scroll',
+    targetId: 'cursos',
+    title: 'Cursos de Informática',
+    description: 'Navega directamente a nuestro catálogo de cursos y descubre la formación que mejor se adapta a tus objetivos.'
+  },
+  serviciosTecnicos: {
+    type: 'modal',
+    title: 'Servicios Técnicos',
+    subtitle: 'Soporte, reparación y mantenimiento especializado para sistemas empresariales.',
+    details: [
+      { label: 'Diagnóstico en sitio', value: 'Evaluación rápida de hardware y software' },
+      { label: 'Mantenimiento preventivo', value: 'Actualizaciones, limpieza y optimización proactiva' },
+      { label: 'Reparación de emergencias', value: 'Atención rápida para reducir tiempos de inactividad' }
+    ],
+    ctaText: 'Contactar',
+    ctaHref: '#contacto'
+  },
+  asesoramientoIt: {
+    type: 'modal',
+    title: 'Asesoramiento IT',
+    subtitle: 'Consultoría estratégica para modernizar tu infraestructura y reducir costos operativos.',
+    details: [
+      { label: 'Auditoría de infraestructura', value: 'Análisis de redes, servidores y seguridad' },
+      { label: 'Planificación de mejoras', value: 'Estrategias escalables para crecimiento digital' },
+      { label: 'Gestión de proyectos', value: 'Acompañamiento en despliegues y migraciones' }
+    ],
+    ctaText: 'Contactar',
+    ctaHref: '#contacto'
+  },
+  redesVideoVigilancia: {
+    type: 'tabs',
+    title: 'Redes y VideoVigilancia',
+    subtitle: 'Soluciones integradas de conectividad y seguridad para tu empresa.',
+    tabs: [
+      {
+        id: 'redes',
+        label: 'Redes',
+        items: [
+          'Diseño e instalación de redes LAN/WAN',
+          'Optimización de WiFi empresarial y enlaces dedicados',
+          'Seguridad perimetral y segmentación de tráfico'
+        ]
+      },
+      {
+        id: 'videovigilancia',
+        label: 'VideoVigilancia',
+        items: [
+          'Cámaras IP y grabación en alta definición',
+          'Monitoreo remoto y notificaciones inteligentes',
+          'Integración con control de acceso y alertas'
+        ]
+      }
+    ],
+    ctaText: 'Contactar',
+    ctaHref: '#contacto'
+  },
+  desarrolloWeb: {
+    type: 'route',
+    title: 'Desarrollo Web',
+    href: '/desarrollo-web/'
+  },
+  impresion3D: {
+    type: 'route',
+    title: 'Impresión 3D',
+    href: '/impresion-3d/'
+  }
+};
+
 // ============================================
 // INICIALIZACIÓN
 // ============================================
@@ -184,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   renderNovedades();
   renderCursos();
+  initServiceActions();
   renderTecnologias();
   initScrollEffects();
   initFormValidation();
@@ -303,18 +374,156 @@ function openModal(cursoId) {
   document.getElementById('modalLevel').textContent = curso.nivel;
   document.getElementById('modalPrice').textContent = curso.precio;
 
-  document.getElementById('courseModal').classList.remove('hidden');
+  const modal = document.getElementById('courseModal');
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
 }
 
 function closeModal() {
-  document.getElementById('courseModal').classList.add('hidden');
+  const modal = document.getElementById('courseModal');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
+}
+
+function initServiceActions() {
+  document.querySelectorAll('[data-service]').forEach(button => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      const actionKey = button.dataset.service;
+      const action = serviceActions[actionKey];
+      if (!action) return;
+
+      if (action.type === 'scroll') {
+        const target = document.getElementById(action.targetId);
+        target?.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      if (action.type === 'route') {
+        window.location.href = action.href;
+        return;
+      }
+
+      openServiceModal(action);
+    });
+  });
+}
+
+function openServiceModal(action) {
+  const modal = document.getElementById('serviceModal');
+  if (!modal) return;
+
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+
+  modal.querySelector('#serviceModalTitle').textContent = action.title;
+  modal.querySelector('#serviceModalDescription').textContent = action.subtitle || action.description || '';
+  const body = modal.querySelector('#serviceModalBody');
+  const cta = modal.querySelector('#serviceModalCTA');
+
+  if (action.type === 'tabs') {
+    body.innerHTML = `
+      <div class="space-y-4">
+        <div class="flex flex-wrap gap-2 mb-4" role="tablist" aria-label="Opciones de servicio">
+          ${action.tabs.map((tab, index) => `
+            <button type="button"
+              role="tab"
+              aria-controls="panel-${tab.id}"
+              aria-selected="${index === 0}"
+              data-tab="${tab.id}"
+              class="tab-button px-4 py-2 rounded-full border border-dark-200 dark:border-dark-600 text-sm font-semibold transition-colors ${index === 0 ? 'bg-primary-500 text-white' : 'bg-white dark:bg-dark-700 text-dark-700 dark:text-white'}">
+              ${tab.label}
+            </button>
+          `).join('')}
+        </div>
+        ${action.tabs.map((tab, index) => `
+          <div id="panel-${tab.id}" role="tabpanel" class="service-tab-panel ${index === 0 ? '' : 'hidden'}">
+            <ul class="list-disc list-inside space-y-2 text-dark-600 dark:text-dark-300">
+              ${tab.items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    body.querySelectorAll('[data-tab]').forEach(button => {
+      button.addEventListener('click', () => switchServiceTab(button.dataset.tab));
+    });
+  } else {
+    body.innerHTML = `
+      <div class="space-y-4">
+        <p class="text-dark-600 dark:text-dark-300">${action.description || ''}</p>
+        <div class="grid gap-3 md:grid-cols-2">
+          ${action.details.map(detail => `
+            <div class="bg-primary-50 dark:bg-dark-600 p-4 rounded-2xl">
+              <p class="text-sm font-semibold text-primary-700 dark:text-primary-300">${detail.label}</p>
+              <p class="text-sm text-dark-500 dark:text-dark-300">${detail.value}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  cta.textContent = action.ctaText || 'Contactar';
+  cta.href = action.ctaHref || '#contacto';
+  cta.onclick = (event) => {
+    if (action.ctaHref === '#contacto') {
+      event.preventDefault();
+      closeServiceModal();
+      document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+}
+
+function switchServiceTab(selectedTabId) {
+  const buttons = document.querySelectorAll('#serviceModal [data-tab]');
+  const panels = document.querySelectorAll('.service-tab-panel');
+
+  buttons.forEach(button => {
+    const active = button.dataset.tab === selectedTabId;
+    button.setAttribute('aria-selected', active);
+    button.classList.toggle('bg-primary-500', active);
+    button.classList.toggle('text-white', active);
+    button.classList.toggle('bg-white', !active);
+    button.classList.toggle('dark:bg-dark-700', !active);
+    button.classList.toggle('text-dark-700', !active);
+  });
+
+  panels.forEach(panel => {
+    panel.classList.toggle('hidden', panel.id !== `panel-${selectedTabId}`);
+  });
+}
+
+function closeServiceModal() {
+  const modal = document.getElementById('serviceModal');
+  if (!modal) return;
+  modal.setAttribute('aria-hidden', 'true');
+  modal.classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
 }
 
 // Cerrar modal al hacer clic fuera
 document.addEventListener('click', (e) => {
-  const modal = document.getElementById('courseModal');
-  if (e.target === modal) {
+  const courseModal = document.getElementById('courseModal');
+  const serviceModal = document.getElementById('serviceModal');
+
+  if (e.target === courseModal) {
     closeModal();
+  }
+
+  if (e.target === serviceModal) {
+    closeServiceModal();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeServiceModal();
   }
 });
 
@@ -437,9 +646,6 @@ function openNovedadModal(novedadId) {
 
   document.getElementById('novedadModalTitle').textContent = novedad.titulo;
   document.getElementById('novedadModalImage').src = novedad.imagen;
-  document.getElementById('novedadModalImage').alt = novedad.titulo;
-  document.getElementById('novedadModalDescription').textContent = novedad.descripcion;
-  document.getElementById('novedadModalDate').textContent = new Date(novedad.fecha).toLocaleDateString('es-ES');
 
   document.getElementById('novedadModal').classList.remove('hidden');
 }
@@ -447,14 +653,6 @@ function openNovedadModal(novedadId) {
 function closeNovedadModal() {
   document.getElementById('novedadModal').classList.add('hidden');
 }
-
-// Cerrar modal de novedades al hacer clic fuera
-document.addEventListener('click', (e) => {
-  const modal = document.getElementById('novedadModal');
-  if (modal && e.target === modal) {
-    closeNovedadModal();
-  }
-});
 
 // ============================================
 // RENDERIZAR TECNOLOGÍAS

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollo Web | IAMTEC</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-dark-900 text-white">
+  <div class="min-h-screen">
+    <header class="bg-dark-900 border-b border-dark-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">IAMTEC</a>
+          <p class="mt-2 text-dark-300">Catálogo de aplicaciones web, demos y accesos rápidos.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="/" class="px-5 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-all">Volver al sitio</a>
+          <a href="#catalogo" class="px-5 py-3 border border-primary-500 text-primary-500 rounded-lg hover:bg-primary-500 hover:text-white transition-all">Ver catálogo</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section class="mb-16">
+        <p class="text-sm uppercase tracking-[0.24em] text-primary-500 mb-4">Ruta sugerida: <code>/desarrollo-web/</code></p>
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Desarrollo Web Profesional</h1>
+        <p class="text-lg text-dark-300 max-w-3xl leading-relaxed">Descubre nuestro catálogo de aplicaciones web preparadas para empresas, comercios y proyectos digitales. Cada aplicación incluye información técnica, casos de uso y el enlace directo al flujo de Login/Registro del servicio.</p>
+      </section>
+
+      <section id="catalogo" class="grid gap-8 lg:grid-cols-3">
+        <article class="bg-dark-800 border border-dark-700 rounded-3xl p-8 shadow-xl shadow-black/20">
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-500 text-white text-sm font-semibold mb-4">Web App Corporativa</span>
+          <h2 class="text-2xl font-bold mb-4">Gestión de proyectos</h2>
+          <p class="text-dark-300 mb-6">Portal web diseñado para administrar tareas, equipos y reportes de avance con dashboards en tiempo real.</p>
+          <ul class="space-y-3 text-dark-300 mb-6">
+            <li><strong>Tecnologías:</strong> React, Node.js, Tailwind CSS</li>
+            <li><strong>Demo:</strong> Panel administrativo con métricas y gráficos interactivos</li>
+            <li><strong>Testimonio:</strong> “Mejoró la coordinación del equipo y redujo tiempos de seguimiento.”</li>
+          </ul>
+          <a href="https://app.iamtec.com/login" target="_blank" rel="noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-2xl font-semibold hover:shadow-lg transition-all">Acceder Login / Registro</a>
+        </article>
+
+        <article class="bg-dark-800 border border-dark-700 rounded-3xl p-8 shadow-xl shadow-black/20">
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-500 text-white text-sm font-semibold mb-4">Tienda Digital</span>
+          <h2 class="text-2xl font-bold mb-4">E-commerce y catálogo</h2>
+          <p class="text-dark-300 mb-6">Catálogo online con carrito de compras, pasarela de pago y experiencia móvil optimizada.</p>
+          <ul class="space-y-3 text-dark-300 mb-6">
+            <li><strong>Tecnologías:</strong> Vue, Vite, Stripe API</li>
+            <li><strong>Demo:</strong> Filtros inteligentes y proceso de checkout simplificado</li>
+            <li><strong>Testimonio:</strong> “El lanzamiento digital amplió nuestras ventas en un 30%.”</li>
+          </ul>
+          <a href="https://tienda.iamtec.com/login" target="_blank" rel="noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-2xl font-semibold hover:shadow-lg transition-all">Acceder Login / Registro</a>
+        </article>
+
+        <article class="bg-dark-800 border border-dark-700 rounded-3xl p-8 shadow-xl shadow-black/20">
+          <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-500 text-white text-sm font-semibold mb-4">Portal Educativo</span>
+          <h2 class="text-2xl font-bold mb-4">Plataforma de aprendizaje</h2>
+          <p class="text-dark-300 mb-6">Portal para cursos online, administración de alumnos y seguimiento de progreso académico.</p>
+          <ul class="space-y-3 text-dark-300 mb-6">
+            <li><strong>Tecnologías:</strong> Next.js, Firebase, Tailwind CSS</li>
+            <li><strong>Demo:</strong> Panel de usuario, accesos por roles y seguimiento de módulos</li>
+            <li><strong>Testimonio:</strong> “Un entorno ágil y moderno para nuestros estudiantes.”</li>
+          </ul>
+          <a href="https://learn.iamtec.com/login" target="_blank" rel="noreferrer"
+            class="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-2xl font-semibold hover:shadow-lg transition-all">Acceder Login / Registro</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-dark-900 border-t border-dark-700 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-dark-400 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 IAMTEC. Desarrollo Web moderno y profesional.</p>
+        <a href="/" class="text-primary-500 hover:text-primary-400 transition-colors">Regresar al inicio</a>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

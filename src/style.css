@@ -334,3 +334,33 @@ button:active {
   color: #e2e8f0 !important; /* cyan */
 }
 
+.modal-backdrop {
+  background-color: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(16px);
+}
+
+.modal-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.35);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.modal-backdrop > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tab-button {
+  min-width: 120px;
+}
+
+.service-tab-panel {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.service-tab-panel.hidden {
+  display: none;
+}
