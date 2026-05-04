@@ -2,43 +2,43 @@ export const servicios3d = [
   {
     id: 'disenio3d',
     title: 'Diseño y Modelado 3D',
-    description: 'Creación de modelos digitales precisos para tus proyectos de ingeniería, arte y diseño industrial.',
-    img: 'https://images.unsplash.com/photo-1632128589537-a8c3a3c5f2f2?auto=format&fit=crop&w=600&q=80',
+    description: 'Creación de modelos digitales precisos de ingeniería, arte y diseño industrial.',
+    img: 'https://images.pexels.com/photos/5904081/pexels-photo-5904081.jpeg',
     buttonLabel: 'Ver Detalles'
   },
   {
     id: 'prototipado',
     title: 'Prototipado Rápido e Ingeniería',
     description: 'Fabricación rápida de prototipos funcionales para validar ideas y conceptos innovadores.',
-    img: 'https://images.unsplash.com/photo-1626425032583-8bc79b4f3c4a?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/9242927/pexels-photo-9242927.jpeg',
     buttonLabel: 'Ver Detalles'
   },
   {
     id: 'fabricacion',
     title: 'Fabricación Directa',
     description: 'Impresión de piezas en materiales variados para producción, reemplazo y personalización.',
-    img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/31137405/pexels-photo-31137405.jpeg',
     buttonLabel: 'Ver Detalles'
   },
   {
     id: 'postprocesado',
     title: 'Servicios de Post-procesado',
     description: 'Acabado profesional: pulido, pintura, ensamble y tratamientos de superficie avanzados.',
-    img: 'https://images.unsplash.com/photo-1608777707834-f9e1e4c0a46a?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/17509941/pexels-photo-17509941.jpeg',
     buttonLabel: 'Ver Detalles'
   },
   {
     id: 'mantenimiento',
-    title: 'Optimización y Reparación de Impresoras',
+    title: 'Optimización y Reparación',
     description: 'Mantenimiento, calibración y reparación de equipos para maximizar calidad y eficiencia.',
-    img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/31336828/pexels-photo-31336828.jpeg',
     buttonLabel: 'Ver Detalles'
   },
   {
     id: 'consultoria',
     title: 'Consultoría y Capacitación',
-    description: 'Asesoramiento integral en tecnología 3D, selección de equipos y entrenamiento de personal.',
-    img: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80',
+    description: 'Asesoramiento en tecnología 3D, selección de equipos y entrenamiento de personal.',
+    img: 'https://images.pexels.com/photos/29253470/pexels-photo-29253470.jpeg',
     buttonLabel: 'Ver Detalles'
   }
 ];

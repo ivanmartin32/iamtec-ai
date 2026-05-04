@@ -295,7 +295,14 @@ button:active {
   background-color:  #0ea5e9 !important; /* cyan */
   background: linear-gradient(280deg,rgba(13, 44, 68, 1) 0%, rgba(255, 255, 255, 1) 70%);
 }
-
+[data-theme='cyan'] #instructores {
+  background-color:  #0ea5e9 !important; /* cyan */
+  background: linear-gradient(0deg,rgba(13, 44, 68, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+[data-theme='cyan'] #aplicaciones {
+  background-color:  #0ea5e9 !important; /* cyan */
+  background: linear-gradient(0deg,rgba(13, 44, 68, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
 [data-theme='cyan'] span {
   color: #0f172a !important; /* cyan */
 }

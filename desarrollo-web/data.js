@@ -3,14 +3,14 @@ export const developmentServices = [
     id: 'fullstack',
     title: 'Desarrollo Full Stack',
     description: 'Soluciones web completas desde backend a frontend, APIs y bases de datos.',
-    img: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg',
     highlights: ['React', 'Node.js', 'APIs REST']
   },
   {
     id: 'ecommerce',
     title: 'E-commerce y Catálogos Online',
     description: 'Tiendas digitales optimizadas para conversión y experiencia móvil.',
-    img: 'https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/7667442/pexels-photo-7667442.jpeg',
     highlights: ['Vue', 'Stripe', 'UX móvil']
   },
   {
@@ -24,27 +24,27 @@ export const developmentServices = [
 
 export const developmentApplications = [
   {
-    name: 'Gestión de proyectos',
-    category: 'Web App Corporativa',
-    description: 'Portal web diseñado para administrar tareas, equipos y reportes de avance con dashboards en tiempo real.',
-    technologies: 'React, Node.js, Tailwind CSS',
-    loginUrl: 'https://app.iamtec.com/login',
-    testimonial: '“Mejoró la coordinación del equipo y redujo tiempos de seguimiento.”'
+    name: 'ComerciAR',
+    category: 'Web App Comercial',
+    description: 'Portal web diseñado para administrar produccion, stock, proveedores y clientes de manera eficiente.',
+    technologies: 'Node Js, React, Tailwind CSS',
+    loginUrl: 'https://app.innovariamtec.com/Comerciar/login',
+    testimonial: '“Con su dashboard Mejoró los tiempos y eficiencia operativa de los comercios adheridos.”'
   },
   {
-    name: 'Tienda Digital',
-    category: 'E-commerce y catálogo',
-    description: 'Catálogo online con carrito de compras, pasarela de pago y experiencia móvil optimizada.',
-    technologies: 'Vue, Vite, Stripe API',
-    loginUrl: 'https://tienda.iamtec.com/login',
-    testimonial: '“El lanzamiento digital amplió nuestras ventas en un 30%.”'
+    name: 'RDH Ruta del Huevo',
+    category: 'Web App E-Commerce',
+    description: 'Tienda online para productores de huevos, con catálogo de productos, funciones de compras, transporte y pasarela de pago.',
+    technologies: 'Node Js, Vite, Tailwind CSS',
+    loginUrl: 'https://tienda.innovariamtec.com/rdh/login',
+    testimonial: '“Facilita las necesidades de compra, logística y venta por parte de productores, transportistas y clientes.”'
   },
   {
-    name: 'Plataforma Educativa',
-    category: 'Portal Educativo',
-    description: 'Sistema para cursos online, administración de estudiantes y seguimiento de progreso.',
-    technologies: 'Next.js, Firebase, Tailwind CSS',
-    loginUrl: 'https://learn.iamtec.com/login',
-    testimonial: '“Un entorno ágil y moderno para nuestros estudiantes.”'
+    name: 'PactoAgro',
+    category: 'Web App E-Commerce',
+    description: 'Plataforma de publicacion de compra, venta y servicios agropecuarios, con gestión de publicaciones y seguimiento de transacciones.',
+    technologies: 'Node Js, Vite, Tailwind CSS',
+    loginUrl: 'https://tienda.innovariamtec.com/pactoagro/login',
+    testimonial: '“Entorno intuitivo y eficiente para la gestión de compra/venta y servicios agropecuarios.”'
   }
 ];
