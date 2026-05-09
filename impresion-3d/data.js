@@ -47,31 +47,31 @@ export const trabajos3d = [
   {
     title: 'Pieza Industrial Personalizada',
     description: 'Componente funcional para maquinaria especializada fabricado en nylon industrial.',
-    img: 'https://images.unsplash.com/photo-1559163553-a7bc9ad8e7b9?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/31121900/pexels-photo-31121900.jpeg',
     tag: 'Ingeniería'
   },
   {
     title: 'Prototipo de Electrodoméstico',
     description: 'Prototipo funcional para validar diseño ergonómico y mecánico de nuevo producto.',
-    img: 'https://images.unsplash.com/photo-1633356122544-f134324ef6db?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/9242925/pexels-photo-9242925.jpeg',
     tag: 'Producto'
   },
   {
     title: 'Colección de Joyería 3D',
     description: 'Anillos y accesorios de diseño personalizado con acabado premium en resina.',
-    img: 'https://images.unsplash.com/photo-1613905651216-e18d8dd4c3db?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/15466197/pexels-photo-15466197.jpeg',
     tag: 'Diseño'
   },
   {
     title: 'Modelo Arquitectónico',
     description: 'Maqueta a escala de proyecto residencial para presentación a inversores y clientes.',
-    img: 'https://images.unsplash.com/photo-1581092162081-8492e1ce21db?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/29148783/pexels-photo-29148783.jpeg',
     tag: 'Arquitectura'
   },
   {
     title: 'Componentes Robóticos',
     description: 'Piezas de precisión para brazo robótico educativo fabricadas en PLA reforzado.',
-    img: 'https://images.unsplash.com/photo-1580858169267-3c97c887f0f1?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/8294615/pexels-photo-8294615.jpeg',
     tag: 'Robótica'
   },
   {

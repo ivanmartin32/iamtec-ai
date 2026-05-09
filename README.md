@@ -1,4 +1,4 @@
-# 🚀 IAMTEC - Landing Page Profesional
+# IAMTEC - Landing Page Profesional
 
 Landing page moderna, responsiva y completamente interactiva para una empresa de tecnología. Diseñada con tecnologías modernas y mejores prácticas de desarrollo.
 
