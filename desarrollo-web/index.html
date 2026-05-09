@@ -7,7 +7,7 @@
   <title>Desarrollo Web | IAMTEC</title>
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
-  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="../src/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -20,14 +20,14 @@
         <div class="flex justify-between items-center h-16">
           <!-- Estructura del Logo -->
           <div class="flex items-center space-x-2">
-            <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
-              <img src="/src/image/logo.png" alt="iamtec" class="h-14 w-auto">
+            <a href="../" class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
+              <img src="../src/image/logo.png" alt="iamtec" class="h-14 w-auto">
             </a>
           </div>
 
           <!-- Menu Escritorio -->
           <div class="hidden md:flex items-center space-x-8">
-            <a href="/#inicio" class="nav-link hover:text-primary-500 transition-colors">Inicio</a>
+            <a href="#inicio" class="nav-link hover:text-primary-500 transition-colors">Inicio</a>
             <a href="#servicios" class="nav-link hover:text-primary-500 transition-colors">Servicios</a>
             <a href="#aplicaciones" class="nav-link hover:text-primary-500 transition-colors">Aplicaciones</a>
             <a href="#testimonios" class="nav-link hover:text-primary-500 transition-colors">Testimonios</a>
@@ -61,7 +61,7 @@
       <div id="mobileMenu"
         class="hidden md:hidden bg-white dark:bg-dark-800 border-t border-dark-200 dark:border-dark-700">
         <div class="px-4 py-4 space-y-4">
-          <a href="/#inicio" class="block hover:text-primary-500 transition-colors">Inicio</a>
+          <a href="#inicio" class="block hover:text-primary-500 transition-colors">Inicio</a>
           <a href="#servicios" class="block hover:text-primary-500 transition-colors">Servicios</a>
           <a href="#aplicaciones" class="block hover:text-primary-500 transition-colors">Aplicaciones</a>
           <a href="#testimonios" class="block hover:text-primary-500 transition-colors">Testimonios</a>
@@ -101,7 +101,7 @@
 
           <!-- Ilustración Hero -->
           <div class="fade-in-element animation-delay-200">
-            <video src="/src/video/Desarrollo_Web.mp4" autoplay muted loop class="rounded-lg shadow-2xl">
+            <video src="../src/video/Desarrollo_Web.mp4" autoplay muted loop class="rounded-lg shadow-2xl">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -316,7 +316,7 @@
         <div class="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
-              <img src="/src/image/logo.png" alt="iamtec" class="h-14 w-auto">
+              <img src="../src/image/logo.png" alt="iamtec" class="h-14 w-auto">
             </div>
             <p class="text-dark-400">Tecnología, Innovación y Aprendizaje...</p>
           </div>
@@ -334,7 +334,7 @@
           <div>
             <h4 class="font-semibold mb-4">Empresa</h4>
             <ul class="space-y-2 text-dark-400">
-              <li><a href="/" class="hover:text-primary-500 transition-colors">Inicio</a></li>
+              <li><a href="../" class="hover:text-primary-500 transition-colors">Inicio</a></li>
               <li><a href="#contacto" class="hover:text-primary-500 transition-colors">Contacto</a></li>
               <li><a href="#testimonios" class="hover:text-primary-500 transition-colors">Testimonios</a></li>
               <li><a href="#aplicaciones" class="hover:text-primary-500 transition-colors">Proyectos</a></li>
@@ -376,7 +376,7 @@
   <script type="module" src="../src/main.js"></script>
 
   <script type="module">
-    import { developmentServices, developmentApplications } from './data.js';
+    import { developmentServices, developmentApplications } from '/src/desarrolloWeb.js';
 
     const servicesContainer = document.getElementById('developmentServices');
     const appsContainer = document.getElementById('developmentApps');

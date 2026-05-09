@@ -65,6 +65,8 @@ const tecnologias = [
   { nombre: 'Productividad', icono: 'fas fa-tasks' }
 ];
 
+const basePath = import.meta.env.BASE_URL || '/';
+
 const serviceActions = {
   cursosInformaticos: {
     type: 'scroll',
@@ -126,12 +128,12 @@ const serviceActions = {
   desarrolloWeb: {
     type: 'route',
     title: 'Desarrollo Web',
-    href: '/desarrollo-web/'
+    href: `${basePath}desarrollo-web/`
   },
   impresion3D: {
     type: 'route',
     title: 'Impresión 3D',
-    href: '/impresion-3d/'
+    href: `${basePath}impresion-3d/`
   }
 };
 
