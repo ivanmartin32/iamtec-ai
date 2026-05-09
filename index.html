@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAMTEC - Tecnología, Innovación y Aprendizaje</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" crossorigin src="/iamtec-ai/assets/datosCursos-DZXJZ3jp.js"></script>
+  <script type="module" crossorigin src="/iamtec-ai/assets/main-DocRQp-w.js"></script>
+  <link rel="stylesheet" crossorigin href="/iamtec-ai/assets/datosCursos-tpW59OnD.css">
+</head>
+
+<body
+    class="bg-white dark:bg-dark-900 cyan-theme-bg text-dark-900 dark:text-white cyan-theme-text transition-colors duration-300">
+    <div id="app">
+        <!-- Barra Navegacion (Navbar) -->
+        <nav id="navbar"
+            class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-dark-800 shadow-sm transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Estructura del Logo -->
+                    <div class="flex items-center space-x-2">
+                        <div
+                            class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
+                            <img src="/iamtec-ai/assets/logo-CgaFU_Kh.png" alt="iamtec" class="h-14 w-auto">
+                        </div>
+                    </div>
+
+                    <!-- Menu Escritorio -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#inicio"
+                            class="nav-link hover:text-primary-500 cyan-theme-text transition-colors">Inicio</a>
+                        <a href="#servicios"
+                            class="nav-link hover:text-primary-500 cyan-theme-text transition-colors">Servicios</a>
+                        <a href="#cursos"
+                            class="nav-link hover:text-primary-500 cyan-theme-text transition-colors">Cursos</a>
+                        <a href="#sobre" class="nav-link hover:text-primary-500 cyan-theme-text transition-colors">Sobre
+                            Nosotros</a>
+                        <a href="#testimonios"
+                            class="nav-link hover:text-primary-500 cyan-theme-text transition-colors">Testimonios</a>
+                        <a href="#contacto"
+                            class="nav-link hover:text-primary-500 cyan-theme-text transition-colors">Contacto</a>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Modos (Toggle Dark Mode) -->
+                        <button id="darkModeToggle"
+                            class="p-2 rounded-lg bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 transition-colors">
+                            <i class="fas fa-moon dark:hidden cyan-theme-hide"></i>
+                            <i class="fas fa-sun hidden dark:block cyan-theme-show"></i>
+                        </button>
+
+                        <!-- Contactar Button -->
+                        <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})"
+                            class="hidden md:block px-6 py-2 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all hover:scale-105">
+                            Contactar
+                        </button>
+
+                        <!-- Menu Celular -->
+                        <button id="menuToggle" class="md:hidden p-2">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Movil Celular -->
+            <div id="mobileMenu"
+                class="hidden md:hidden bg-white dark:bg-dark-800 border-t border-dark-200 dark:border-dark-700">
+                <div class="px-4 py-4 space-y-4">
+                    <a href="#inicio" class="block hover:text-primary-500 cyan-theme-text transition-colors">Inicio</a>
+                    <a href="#servicios"
+                        class="block hover:text-primary-500 cyan-theme-text transition-colors">Servicios</a>
+                    <a href="#cursos" class="block hover:text-primary-500 cyan-theme-text transition-colors">Cursos</a>
+                    <a href="#sobre" class="block hover:text-primary-500 cyan-theme-text transition-colors">Sobre
+                        Nosotros</a>
+                    <a href="#testimonios"
+                        class="block hover:text-primary-500 cyan-theme-text transition-colors">Testimonios</a>
+                    <a href="#contacto"
+                        class="block hover:text-primary-500 cyan-theme-text transition-colors">Contacto</a>
+                    <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})"
+                        class="w-full px-4 py-2 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all">
+                        Contactar
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="inicio"
+            class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 bg-white dark:from-dark-900 dark:to-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Contenido Hero -->
+                    <div class="fade-in-element">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            La Tecnología <span
+                                class="bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent"><br>al
+                                alcance de todos</span>
+                        </h1>
+                        <p class="text-xl text-dark-600 dark:text-dark-300 mb-8 leading-relaxed">
+                            Impulsa tu crecimiento con formaciones tecnologicas, asesoramientos y soluciones innovadoras
+                            para personas, negocios y empresas.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="document.getElementById('cursos').scrollIntoView({behavior: 'smooth'})"
+                                class="px-8 py-4 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                Ver Cursos
+                            </button>
+                            <button onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'})"
+                                class="px-8 py-4 border-2 border-primary-500 text-primary-500 rounded-lg font-semibold hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors">
+                                Explorar Servicios
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Ilustración Hero -->
+                    <div class="fade-in-element animation-delay-200">
+                        <div class="relative">
+                            <video src="/iamtec-ai/assets/Generaci%C3%B3n_De_Video_Corto-DHmGcywl.mp4" autoplay muted loop
+                                class="rounded-lg"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Novedades Section -->
+        <section id="novedades" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-dark-800 dark:text-white">Novedades Tecnológicas
+                    </h2>
+                    <p class="text-xl text-dark-600 dark:text-dark-300">Mantente al día con las últimas innovaciones y
+                        tendencias</p>
+                </div>
+
+                <div id="novedadesContainer" class="fade-in-element">
+                    <!-- El contenido se genera dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios"
+            class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 bg-white dark:from-dark-900 dark:to-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Nuestros Servicios</h2>
+                    <p class="text-xl text-dark-600 dark:text-dark-300">Soluciones tecnológicas completas para tu éxito
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Servicio Card 1 -->
+                    <div class="service-card group">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1oqTw-OXolmwdtg3Q-1ypZsTvO02J2Rpq"
+                            alt="Cursos de Informática"
+                            class="rounded-lg mb-4 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-3 cyan-theme-text">Cursos de Informática</h3>
+                        <p class="text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">Programas educativos en
+                            desarrollo, infraestructura y tecnologías modernas</p>
+                        <button type="button" data-service="cursosInformaticos"
+                            class="inline-flex items-center text-primary-500 font-semibold hover:gap-2 transition-all">
+                            Más info <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Servicio Card 2 -->
+                    <div class="service-card group">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1J7ztwpfMDClDZt-RRElznJuQOAApIr5k"
+                            alt="Servicios Técnicos"
+                            class="rounded-lg mb-4 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-3 cyan-theme-text">Servicios Técnicos</h3>
+                        <p class="text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">Mantenimiento, reparación y
+                            soporte técnico profesional para empresas</p>
+                        <button type="button" data-service="serviciosTecnicos"
+                            class="inline-flex items-center text-primary-500 font-semibold hover:gap-2 transition-all">
+                            Más info <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Servicio Card 3 -->
+                    <div class="service-card group">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1fcNCR54Xv4OwpyWUU7zhIHJlX1p9ISmz"
+                            alt="Asesoramiento IT"
+                            class="rounded-lg mb-4 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-3 cyan-theme-text">Asesoramiento IT</h3>
+                        <p class="text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">Consultoría experta para
+                            optimizar tu infraestructura tecnológica</p>
+                        <button type="button" data-service="asesoramientoIt"
+                            class="inline-flex items-center text-primary-500 font-semibold hover:gap-2 transition-all">
+                            Más info <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Servicio Card 4 -->
+                    <div class="service-card group">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1MP9FJ5qk6lk5s2xNGJuQmHinA8YrhoDa"
+                            alt="Redes y VideoVigilancia"
+                            class="rounded-lg mb-4 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-3 cyan-theme-text">Redes y VideoVigilancia</h3>
+                        <p class="text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">Sistemas de cámaras y
+                            soluciones de seguridad para proteger tu negocio</p>
+                        <button type="button" data-service="redesVideoVigilancia"
+                            class="inline-flex items-center text-primary-500 font-semibold hover:gap-2 transition-all">
+                            Más info <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Servicio Card 5 -->
+                    <div class="service-card group">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1pzD-MbjLvWf_9-zdWfLvCD_ROGA_08OR"
+                            alt="Desarrollo Web"
+                            class="rounded-lg mb-4 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-3 cyan-theme-text">Desarrollo Web</h3>
+                        <p class="text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">Desarrollo de aplicaciones web
+                            modernas y responsive para tu negocio</p>
+                        <button type="button" data-service="desarrolloWeb"
+                            class="inline-flex items-center text-primary-500 font-semibold hover:gap-2 transition-all">
+                            Más info <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+
+                    <!-- Servicio Card 6 -->
+                    <div class="service-card group">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1t84Jy5H_UE8V2PCURMoxYLvK6wkYTAKt"
+                            alt="Impresión 3D"
+                            class="rounded-lg mb-4 w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-3 cyan-theme-text">Impresión 3D</h3>
+                        <p class="text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">Servicios de impresión 3D para
+                            prototipos y fabricación digital</p>
+                        <button type="button" data-service="impresion3D"
+                            class="inline-flex items-center text-primary-500 font-semibold hover:gap-2 transition-all">
+                            Más info <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cursos Section -->
+        <section id="cursos" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-100 dark:bg-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 cyan-theme-text">Cursos mas Populares</h2>
+                    <p class="text-xl text-dark-600 dark:text-dark-300 cyan-theme-text">Aprende las tecnologías más
+                        demandadas del mercado</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="cursosContainer">
+                    <!-- Los cursos se generarán con JavaScript -->
+                </div>
+            </div>
+            <div class="text-center mt-12 ">
+                <a href="./cursos/" class="inline-block w-1/3 px-4 py-2 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all hover:scale-105 text-center">
+                    Más cursos
+                </a>
+            </div>
+        </section>
+
+        <!-- Sobre Nosotros Section -->
+        <section id="sobre" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in-element">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 cyan-theme-text">Sobre IAMTEC</h2>
+                        <p class="text-lg text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">
+                            IAMTEC, es una empresa con un equipo apasionado por la tecnología y la innovación. Nuestra
+                            misión es brindar soluciones tecnológicas de alta calidad que impulsen el crecimiento y la
+                            eficiencia de nuestros clientes tanto en el hogar, negocios, instituciones y empresas.
+                            Fundada en 2015, IAMTEC ha crecido hasta convertirse en una empresa con grandes soluciones
+                            en el sector tecnológico.
+                        </p>
+                        <p class="text-lg text-dark-600 dark:text-dark-300 cyan-theme-text mb-4">
+                            Trabajamos estrechamente con nuestros clientes para entender sus necesidades y
+                            ofrecer soluciones personalizadas que superen sus expectativas, adoptando las últimas
+                            tecnologías
+                            para mantenernos a la vanguardia del mercado y ayudar a nuestros clientes
+                            a alcanzar sus objetivos tecnológicos y a transformar sus negocios.
+                        </p>
+                        <div class="space-y-5">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-500">
+                                        <i class="fa-solid fa-award text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Profesionales Certificados</h3>
+                                    <p class="text-dark-600 dark:text-dark-300">Instructores con experiencia</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-500">
+                                        <i class="fa-solid fa-arrows-rotate text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Contenido Actualizado</h3>
+                                    <p class="text-dark-600 dark:text-dark-300">Siempre a la vanguardia de la tecnología
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-500">
+                                        <i class="fa-solid fa-user-tie text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Soporte Continuo</h3>
+                                    <p class="text-dark-600 dark:text-dark-300">Disponibles para ayudarte en tu camino
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in-element animation-delay-200">
+                        <div class="relative">
+                            <video src="/iamtec-ai/assets/sobre_nosotros_innovacion-iJlgj2iH.mp4" autoplay muted loop class="rounded-lg"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios Section -->
+        <section id="testimonios" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-50 dark:bg-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 cyan-theme-text">Lo Que Dicen Nuestros Clientes</h2>
+                    <p class="text-xl text-dark-600 dark:text-dark-300 cyan-theme-text">Testimonios de éxito de nuestros
+                        usuarios</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="testimonial-card bg-white dark:bg-dark-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                JM
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Juan Martínez</h4>
+                                <p class="text-sm text-dark-600 dark:text-dark-300">Empleado de Comercio</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-dark-600 dark:text-dark-300">"Los cursos de IAMTEC mejoraron mis habilidades y me abrieron nuevas oportunidades profesionales."</p>
+                    </div>
+
+                    <div
+                        class="testimonial-card bg-white dark:bg-dark-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                MR
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">María Rodríguez</h4>
+                                <p class="text-sm text-dark-600 dark:text-dark-300">Dueña de Negocio</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-dark-600 dark:text-dark-300">"Excelente atención al cliente y contenido de
+                            calidad. Recomendamos IAMTEC a todas nuestros negocios asociadas."</p>
+                    </div>
+
+                    <div
+                        class="testimonial-card bg-white dark:bg-dark-700 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                                CR
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Carlos Rivera</h4>
+                                <p class="text-sm text-dark-600 dark:text-dark-300">Emprendedor Tech</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <p class="text-dark-600 dark:text-dark-300">"Con el asesoramiento IT de IAMTEC hemos optimizado
+                            nuestros procesos y reducido costos significativamente."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologías Section -->
+        <section id="tech" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4 cyan-theme-text">Tecnologías que Enseñamos</h2>
+                    <p class="text-xl text-dark-600 dark:text-dark-300 cyan-theme-text">Las herramientas más actuales y
+                        demandadas</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6" id="techGrid">
+                    <!-- Los logos se generarán con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto Section -->
+        <section id="contacto" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-50 dark:bg-dark-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Información de Contacto -->
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-8 cyan-theme-text">Ponte en Contacto</h2>
+                        <p class="text-lg text-dark-600 dark:text-dark-300 cyan-theme-text mb-8">
+                            ¿Tienes preguntas? Nuestro equipo está listo para ayudarte. Completa el formulario y nos
+                            comunicaremos contigo pronto.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-500">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Teléfono</h3>
+                                    <p class="text-dark-600 dark:text-dark-300">+54 9 2358 45-1742</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-500">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Email</h3>
+                                    <p class="text-dark-600 dark:text-dark-300">info@innovariamtec.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-500">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-1">Ubicación</h3>
+                                    <p class="text-dark-600 dark:text-dark-300">Los Toldos, Buenos Aires, Argentina</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/profile.php?id=615747786722589" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/innovar.iamtec/" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://wa.me/5492358451742" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <form id="contactForm" class="space-y-6 bg-white dark:bg-dark-700 p-8 rounded-xl shadow-lg">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Nombre</label>
+                            <input type="text" id="name" placeholder="Tu nombre"
+                                class="w-full px-4 py-3 rounded-lg border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" id="email" placeholder="Tu email"
+                                class="w-full px-4 py-3 rounded-lg border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Asunto</label>
+                            <input type="text" id="subject" placeholder="Asunto del mensaje"
+                                class="w-full px-4 py-3 rounded-lg border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Mensaje</label>
+                            <textarea id="message" rows="5" placeholder="Tu mensaje"
+                                class="w-full px-4 py-3 rounded-lg border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all hover:scale-105">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div
+                            class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
+                            <img src="/iamtec-ai/assets/logo-CgaFU_Kh.png" alt="iamtec" class="h-14 w-auto">
+                        </div>
+                        <p class="text-dark-400">Tecnología, Innovación y Aprendizaje...</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4 cyan-theme-text">Servicios</h4>
+                        <ul class="space-y-2 text-dark-400">
+                            <li><a href="#servicios"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Cursos</a></li>
+                            <li><a href="#servicios"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Soporte Técnico</a>
+                            </li>
+                            <li><a href="#servicios"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Asesoramiento</a>
+                            </li>
+                            <li><a href="#servicios"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Desarrollo</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4 cyan-theme-text">Empresa</h4>
+                        <ul class="space-y-2 text-dark-400">
+                            <li><a href="#sobre" class="hover:text-primary-500 cyan-theme-text transition-colors">Sobre
+                                    Nosotros</a></li>
+                            <li><a href="#contacto"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Contacto</a></li>
+                            <li><a href="#testimonios"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Testimonios</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4 cyan-theme-text">Legales</h4>
+                        <ul class="space-y-2 text-dark-400">
+                            <li><a href="#"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Términos</a></li>
+                            <li><a href="#"
+                                    class="hover:text-primary-500 cyan-theme-text transition-colors">Privacidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-dark-700 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-dark-400 mb-4 md:mb-0">© 2026 IAMTEC. Todos los derechos reservados.</p>
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold mb-4">Síguenos</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/profile.php?id=615747786722589" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/innovar.iamtec/" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://wa.me/5492358451742" target="_blank"
+                                    class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal para Cursos Detalles -->
+        <div id="courseModal"
+            class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal-backdrop"
+            aria-hidden="true">
+            <div class="bg-white dark:bg-dark-700 rounded-xl max-w-2xl w-full max-h-96 overflow-y-auto">
+                <div
+                    class="sticky top-0 bg-white dark:bg-dark-700 p-6 border-b border-dark-200 dark:border-dark-600 flex justify-between items-center">
+                    <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+                    <button onclick="closeModal()" class="text-dark-500 hover:text-dark-700 dark:hover:text-dark-300"
+                        aria-label="Cerrar modal de curso">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <p id="modalDescription" class="text-dark-600 dark:text-dark-300 mb-4"></p>
+                    <div class="bg-primary-50 dark:bg-dark-600 p-4 rounded-lg mb-4">
+                        <p class="text-sm"><strong>Duración:</strong> <span id="modalDuration"></span></p>
+                        <p class="text-sm"><strong>Nivel:</strong> <span id="modalLevel"></span></p>
+                        <p class="text-sm"><strong>Precio:</strong> <span id="modalPrice"></span></p>
+                    </div>
+                    <button onclick="window.open('https://app.iamtec.com/registro', '_blank')"
+                        class="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                        Inscribirse
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Dinámico de Servicios -->
+        <div id="serviceModal"
+            class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop"
+            aria-hidden="true">
+            <div role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle"
+                class="bg-white dark:bg-dark-700 rounded-xl max-w-3xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+                <div
+                    class="sticky top-0 bg-white dark:bg-dark-700 p-6 border-b border-dark-200 dark:border-dark-600 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.24em] text-primary-500 mb-2">Detalle del servicio</p>
+                        <h2 id="serviceModalTitle" class="text-4xl font-bold"></h2>
+                        <p id="serviceModalDescription" class="text-dark-600 dark:text-dark-300 mt-3"></p>
+                    </div>
+                    <button onclick="closeServiceModal()" class="text-dark-500 hover:text-dark-700 dark:hover:text-dark-300"
+                        aria-label="Cerrar modal de servicio">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div id="serviceModalBody" class="p-6"></div>
+                <div class="p-6 border-t border-dark-200 dark:border-dark-600">
+                    <a id="serviceModalCTA" href="#contacto"
+                        class="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

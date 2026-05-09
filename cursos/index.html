@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos IAMTEC</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" crossorigin src="/iamtec-ai/assets/cursos-BCdb0OoS.js"></script>
+  <link rel="modulepreload" crossorigin href="/iamtec-ai/assets/datosCursos-DZXJZ3jp.js">
+  <link rel="stylesheet" crossorigin href="/iamtec-ai/assets/datosCursos-tpW59OnD.css">
+</head>
+
+<body class="bg-white dark:bg-dark-900 text-dark-900 dark:text-white transition-colors duration-300">
+  <div id="app">
+    <nav id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-dark-800 shadow-sm transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center space-x-2">
+            <a href="/" class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
+              <img src="/iamtec-ai/assets/logo-CgaFU_Kh.png" alt="iamtec" class="h-14 w-auto">
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="nav-link hover:text-primary-500 transition-colors">Inicio</a>
+            <a href="/" class="nav-link hover:text-primary-500 transition-colors">Servicios</a>
+            <a href="#cursos" class="nav-link hover:text-primary-500 transition-colors">Cursos</a>
+            <a href="/" class="nav-link hover:text-primary-500 transition-colors">Sobre Nosotros</a>
+            <a href="/" class="nav-link hover:text-primary-500 transition-colors">Testimonios</a>
+            
+          </div>
+          <div class="flex items-center space-x-4">
+            <button id="darkModeToggle"
+              class="p-2 rounded-lg bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 transition-colors">
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+            <button id="menuToggle" class="md:hidden p-2">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobileMenu"
+        class="hidden md:hidden bg-white dark:bg-dark-800 border-t border-dark-200 dark:border-dark-700">
+        <div class="px-4 py-4 space-y-4">
+          <a href="/" class="block hover:text-primary-500 transition-colors">Inicio</a>
+          <a href="/" class="block hover:text-primary-500 transition-colors">Servicios</a>
+          <a href="#cursos" class="block hover:text-primary-500 transition-colors">Cursos</a>
+          <a href="/" class="block hover:text-primary-500 transition-colors">Sobre Nosotros</a>
+          <a href="/" class="block hover:text-primary-500 transition-colors">Testimonios</a>
+          
+        </div>
+      </div>
+    </nav>
+
+    <section id="inicio"
+      class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 bg-white dark:from-dark-900 dark:to-dark-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="fade-in-element">
+            <p class="text-sm uppercase font-semibold tracking-[0.32em] text-primary-500 mb-4">Catálogo de cursos</p>
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">Encuentra el curso para tu crecimiento profesional</h1>
+            <p class="text-xl text-dark-600 dark:text-dark-300 mb-8 leading-relaxed">Navega por todos nuestros cursos, 
+                encuentra el que mas te gusta y se parte de nuestra comunidad de alumnos o instructores.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://app.iamtec.com/registro" target="_blank"
+                class="px-8 py-4 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
+                Registrarse
+              </a>
+              <a href="https://app.iamtec.com/login" target="_blank"
+                class="px-8 py-4 border-2 border-primary-500 text-primary-500 rounded-lg font-semibold hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors text-center">
+                Iniciar sesión
+              </a>
+            </div>
+          </div>
+          <div class="fade-in-element animation-delay-200">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80"
+              alt="Catálogo de cursos" class="rounded-lg shadow-2xl w-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cursos" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-50 dark:bg-dark-900">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Catálogo completo de cursos</h2>
+          <p class="text-xl text-dark-600 dark:text-dark-300">Ordena, busca y encuentra el curso ideal para tu
+            formación.</p>
+        </div>
+
+        <div class="catalog-controls grid gap-4 md:grid-cols-3 items-end mb-8">
+          <div class="space-y-2">
+            <label for="courseSearch" class="block text-sm font-semibold">Buscar por nombre</label>
+            <input id="courseSearch" type="search"
+              class="w-full px-4 py-3 rounded-xl border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all"
+              placeholder="Buscar curso">
+          </div>
+          <div class="space-y-2">
+            <label for="courseSort" class="block text-sm font-semibold">Ordenar</label>
+            <select id="courseSort"
+              class="w-full px-4 py-3 rounded-xl border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all">
+              <option value="asc">A - Z</option>
+              <option value="desc">Z - A</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label for="courseLevel" class="block text-sm font-semibold">Filtrar por nivel</label>
+            <select id="courseLevel"
+              class="w-full px-4 py-3 rounded-xl border border-dark-200 dark:border-dark-600 bg-white dark:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all">
+              <option value="todos">Todos los cursos</option>
+              <option value="Principiante">Principiante</option>
+              <option value="Intermedio">Intermedio</option>
+            </select>
+          </div>
+        </div>
+        <div id="courseCatalog" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <section id="instructores" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark-800">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 py-4">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Instructores IAMTEC</h2>
+          <p class="text-xl text-dark-600 dark:text-dark-300 py-4">¿Eres instructor y quieres publicar tus cursos? <br>
+            Regístrate con tus datos y proyecto de curso para dictar clases en nuestra plataforma y en la red de IAMTEC.</p>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-3">
+          <div class="instructor-card bg-dark-50 dark:bg-dark-700 rounded-3xl p-8 shadow-lg rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Publica tu curso</h3>
+            <p class="text-dark-600 dark:text-dark-300 mb-6">Envía tu propuesta de formación, contenido y objetivos.
+              Nosotros te acompañamos en la publicación.</p>
+            <a href="https://app.iamtec.com/instructores" target="_blank"
+              class="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-full font-semibold hover:shadow-lg transition-all">Registrarme como instructor</a>
+          </div>
+          <div class="instructor-card bg-dark-50 dark:bg-dark-700 rounded-3xl p-8 shadow-lg rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Imparte clases</h3>
+            <p class="text-dark-600 dark:text-dark-300 mb-6">Conecta con estudiantes que buscan formación tecnológica real y práctica.</p>
+            <ul class="space-y-3 text-dark-500 dark:text-dark-300 list-disc list-inside">
+              <li>Soporte para estructurar el curso</li>
+              <li>Publicación en plataforma IAMTEC</li>
+              <li>Acceso a la comunidad de estudiantes</li>
+            </ul>
+          </div>
+          <div class="instructor-card bg-dark-50 dark:bg-dark-700 rounded-3xl p-8 shadow-lg rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Colabora con IAMTEC</h3>
+            <p class="text-dark-600 dark:text-dark-300 mb-6">Ofrece clases bajo la marca IAMTEC y alcanza más alumnos con nuestras campañas.</p>
+            <p class="text-dark-600 dark:text-dark-300">Transforma tu experiencia en una propuesta formativa completa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
+              <img src="/iamtec-ai/assets/logo-CgaFU_Kh.png" alt="iamtec" class="h-14 w-auto">
+            </div>
+            <p class="text-dark-400">Tecnología, Innovación y Aprendizaje...</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Servicios</h4>
+            <ul class="space-y-2 text-dark-400">
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Diseño 3D</a></li>
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Prototipado</a></li>
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Fabricación</a></li>
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Consultoría</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-dark-400">
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Inicio</a></li>
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Contacto</a></li>
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Testimonios</a></li>
+              <li><a href="/" class="hover:text-primary-500 transition-colors">Trabajos</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold mb-4">Legales</h4>
+            <ul class="space-y-2 text-dark-400">
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Términos</a></li>
+              <li><a href="#" class="hover:text-primary-500 transition-colors">Privacidad</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-dark-700 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-dark-400 mb-4 md:mb-0">© 2026 IAMTEC. Todos los derechos reservados.</p>
+            <div class="flex space-x-4">
+              <a href="https://www.facebook.com/profile.php?id=615747786722589" target="_blank"
+                class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/innovar.iamtec/" target="_blank"
+                class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/5492358451742" target="_blank"
+                class="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center text-white hover:scale-110 transition-transform">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Modal para Cursos Detalles -->
+    <div id="courseModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 modal-backdrop"
+      aria-hidden="true">
+      <div class="bg-white dark:bg-dark-700 rounded-xl max-w-2xl w-full max-h-96 overflow-y-auto">
+        <div
+          class="sticky top-0 bg-white dark:bg-dark-700 p-6 border-b border-dark-200 dark:border-dark-600 flex justify-between items-center">
+          <h2 id="modalTitle" class="text-2xl font-bold"></h2>
+          <button onclick="closeModal()" class="text-dark-500 hover:text-dark-700 dark:hover:text-dark-300"
+            aria-label="Cerrar modal de curso">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div class="p-6">
+          <p id="modalDescription" class="text-dark-600 dark:text-dark-300 mb-4"></p>
+          <div class="bg-primary-50 dark:bg-dark-600 p-4 rounded-lg mb-4">
+            <p class="text-sm"><strong>Duración:</strong> <span id="modalDuration"></span></p>
+            <p class="text-sm"><strong>Nivel:</strong> <span id="modalLevel"></span></p>
+            <p class="text-sm"><strong>Precio:</strong> <span id="modalPrice"></span></p>
+          </div>
+          <button onclick="window.open('https://app.iamtec.com/registro', '_blank')"
+            class="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+            Inscribirse
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
