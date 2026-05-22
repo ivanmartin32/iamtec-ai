@@ -81,7 +81,8 @@ const serviceActions = {
     details: [
       { label: 'Diagnóstico en sitio', value: 'Evaluación rápida de hardware y software' },
       { label: 'Mantenimiento preventivo', value: 'Actualizaciones, limpieza y optimización proactiva' },
-      { label: 'Reparación de emergencias', value: 'Atención rápida para reducir tiempos de inactividad' }
+      { label: 'Reparación de emergencias', value: 'Atención rápida para reducir tiempos de inactividad' },
+      { label: 'Soporte remoto', value: 'Asistencia técnica a distancia para resolver problemas urgentes' }
     ],
     ctaText: 'Contactar',
     ctaHref: '#contacto'
@@ -89,11 +90,12 @@ const serviceActions = {
   asesoramientoIt: {
     type: 'modal',
     title: 'Asesoramiento IT',
-    subtitle: 'Consultoría estratégica para modernizar tu infraestructura y reducir costos operativos.',
+    subtitle: 'Consultoría estratégica para actualizar tu infraestructura y sistema de trabajo.',
     details: [
-      { label: 'Auditoría de infraestructura', value: 'Análisis de redes, servidores y seguridad' },
+      { label: 'Análisis de infraestructura', value: 'Análisis de redes, servidores y seguridad' },
       { label: 'Planificación de mejoras', value: 'Estrategias escalables para crecimiento digital' },
-      { label: 'Gestión de proyectos', value: 'Acompañamiento en despliegues y migraciones' }
+      { label: 'Gestión de proyectos', value: 'Acompañamiento en despliegues y migraciones' },
+      { label: 'Capacitación personalizada', value: 'Formación a medida para tu equipo' }
     ],
     ctaText: 'Contactar',
     ctaHref: '#contacto'
@@ -109,7 +111,8 @@ const serviceActions = {
         items: [
           'Diseño e instalación de redes LAN/WAN',
           'Optimización de WiFi empresarial y enlaces dedicados',
-          'Seguridad perimetral y segmentación de tráfico'
+          'Seguridad perimetral y segmentación de tráfico',
+          'Monitoreo y análisis de rendimiento de red'
         ]
       },
       {
@@ -118,7 +121,8 @@ const serviceActions = {
         items: [
           'Cámaras IP y grabación en alta definición',
           'Monitoreo remoto y notificaciones inteligentes',
-          'Integración con control de acceso y alertas'
+          'Integración con control de acceso y alertas',
+          'Mantenimiento activo y preventivo'
         ]
       }
     ],
@@ -272,7 +276,7 @@ function openModal(cursoId) {
   document.body.classList.add('overflow-hidden');
 }
 
-function closeModal() {
+function closeCourseModal() {
   const modal = document.getElementById('courseModal');
   modal.setAttribute('aria-hidden', 'true');
   modal.classList.add('hidden');
@@ -404,7 +408,7 @@ document.addEventListener('click', (e) => {
   const serviceModal = document.getElementById('serviceModal');
 
   if (e.target === courseModal) {
-    closeModal();
+    closeCourseModal();
   }
 
   if (e.target === serviceModal) {
@@ -414,7 +418,7 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeModal();
+    closeCourseModal();
     closeServiceModal();
   }
 });
@@ -455,12 +459,6 @@ function renderNovedades() {
       <button onclick="nextNovedad()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-dark-700/90 hover:bg-white dark:hover:bg-dark-700 rounded-full p-3 shadow-lg transition-all" id="nextBtn">
         <i class="fas fa-chevron-right text-primary-500"></i>
       </button>
-
-      <div class="flex justify-center mt-6 space-x-2" id="novedadesIndicators">
-        ${novedades.map((_, index) => `
-          <button onclick="goToNovedad(${index})" class="w-3 h-3 rounded-full bg-dark-300 dark:bg-dark-600 transition-colors" data-slide="${index}"></button>
-        `).join('')}
-      </div>
     </div>
   `;
 
@@ -498,12 +496,7 @@ function initNovedadesCarousel() {
     if (currentIndex < 0) currentIndex = Math.max(0, novedades.length - 3);
     updateCarousel();
   };
-
-  window.goToNovedad = (index) => {
-    currentIndex = index * 3;
-    updateCarousel();
-  };
-
+  
   updateCarousel();
 }
 
@@ -727,9 +720,10 @@ function showNotification(message, type = 'info') {
 // UTILIDADES
 // ============================================
 
-// Hacer la función closeModal disponible globalmente
+// Hacer la función closeCourseModal disponible globalmente
 window.openModal = openModal;
-window.closeModal = closeModal;
+window.closeCourseModal = closeCourseModal;
+window.closeServiceModal = closeServiceModal;
 
 // Log de inicialización
 console.log('%c🚀 IAMTEC - Landing Page', 'font-size: 20px; color: #0ea5e9; font-weight: bold;');
