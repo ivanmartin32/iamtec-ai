@@ -13,11 +13,7 @@ Landing page moderna, responsiva y completamente interactiva para una empresa de
 
 - [Características](#características)
 - [Tecnologías](#tecnologías)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
 - [Funcionalidades](#funcionalidades)
-- [Personalización](#personalización)
 - [Despliegue](#despliegue)
 
 ---
@@ -43,77 +39,6 @@ Landing page moderna, responsiva y completamente interactiva para una empresa de
 | Tailwind CSS | 3.4.1 | Framework de CSS |
 | JavaScript | ES6+ | Lenguaje de programación |
 | Font Awesome | 6.4 | Librería de iconos |
-
----
-
-## Instalación
-
-### Requisitos Previos
-- Node.js versión 14 o superior instalado
-- npm o yarn como gestor de paquetes
-
-### Pasos de Instalación
-
-1. **Clonar o descargar el proyecto**
-```bash
-cd c:\Users\imartin\Documents\IDEA\iamtec\ ai
-```
-
-2. **Instalar dependencias**
-```bash
-npm install
-```
-
-3. **Inicia el servidor de desarrollo**
-```bash
-npm run dev
-```
-
-4. **Abre tu navegador**
-   - Accede a `http://localhost:3000`
-   - ¡La página se abrirá automáticamente!
-
----
-
-## Uso
-
-### Comandos Disponibles
-
-```bash
-# Iniciar servidor de desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-
-# Vista previa de la compilación
-npm run preview
-```
-
-### En Producción
-
-Después de ejecutar `npm run build`, se creará una carpeta `dist/` con los archivos optimizados listos para desplegar.
-
----
-
-## Estructura del Proyecto
-
-```
-iamtec-ai/
-├── src/
-│   ├── main.js              # Punto de entrada principal
-│   ├── style.css            # Estilos globales
-│   ├── components/          # (extensible para componentes modulares)
-│   └── assets/              # (extensible para imágenes, fuentes, etc.)
-├── index.html               # Archivo HTML principal
-├── package.json             # Dependencias del proyecto
-├── vite.config.js           # Configuración de Vite
-├── tailwind.config.js       # Configuración de Tailwind CSS
-├── postcss.config.js        # Configuración de PostCSS
-├── .gitignore               # Archivos ignorados por Git
-├── README.md                # Este archivo
-└── dist/                    # (Generado después de build)
-```
 
 ---
 
@@ -174,49 +99,6 @@ iamtec-ai/
 
 ---
 
-## Personalización
-
-### Cambiar Colores
-
-Edita `tailwind.config.js` y modifica la paleta de colores:
-
-```javascript
-colors: {
-  primary: {
-    // Tus colores aquí
-  }
-}
-```
-
-### Agregar/Modificar Cursos
-
-En `src/main.js`, modifica el array `cursos`:
-
-```javascript
-const cursos = [
-  {
-    id: 1,
-    titulo: 'Tu Curso',
-    descripcion: 'Descripción del curso',
-    duracion: '8 semanas',
-    nivel: 'Principiante',
-    precio: '99€',
-    icono: 'fa-code'
-  },
-  // ... más cursos
-];
-```
-
-### Cambiar Información de Contacto
-
-En `index.html`, busca la sección `#contacto` y actualiza:
-- Teléfono
-- Email
-- Ubicación
-- Redes Sociales
-
----
-
 ## Responsive Design
 
 El sitio es completamente responsive:
@@ -237,87 +119,12 @@ El sitio incluye múltiples animaciones:
 
 ---
 
-## Configuración Avanzada
-
-### Modificar Puertos del Dev Server
-
-En `vite.config.js`:
-
-```javascript
-server: {
-  port: 3000,  // Cambia este número
-  open: true
-}
-```
-
-### Agregar Variables de Entorno
-
-Crea un archivo `.env` en la raíz:
-
-```
-VITE_API_URL=https://api.ejemplo.com
-VITE_AMBIENTE=producción
-```
-
----
-
 ## Rendimiento
 
 - **Lighthouse Score**: 90+
 - **Time to Interactive**: < 1.5s
 - **Cumple PWA**: Partially
 - **Optimizado SEO**: Básicamente configurado
-
----
-
-## Despliegue
-
-### Vercel (Recomendado)
-
-```bash
-npm install -g vercel
-npm run build
-vercel
-```
-
-### Netlify
-
-```bash
-npm run build
-# Arrastra la carpeta 'dist' a Netlify
-```
-
-### GitHub Pages
-
-```bash
-# Agrega a vite.config.js:
-export default {
-  base: '/iamtec-ai/'
-}
-
-npm run build
-# Sube la carpeta 'dist' a tu repositorio
-```
-
-### Servidor Tradicional (Apache, Nginx)
-
-1. Ejecuta `npm run build`
-2. Copia el contenido de la carpeta `dist/`
-3. Sube a tu servidor web
-
----
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Para cambios importantes:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
----
 
 ## Licencia
 
@@ -328,7 +135,7 @@ Este proyecto está bajo la Licencia MIT - Ver el archivo LICENSE para más deta
 ## Contacto y Soporte
 
 Para preguntas o sugerencias sobre el proyecto:
-- Email: info@iamtec.com
+- Email: info@innovariamtec.com
 - Web: https://innovariamtec.com/
 
 ---
@@ -378,4 +185,4 @@ Para preguntas o sugerencias sobre el proyecto:
      ◆◆◆
 ```
 
-Última actualización: Abril 2026
+Última actualización: Mayo 2026

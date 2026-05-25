@@ -638,13 +638,23 @@ function initNavbarScroll() {
 }
 
 // ============================================
+// CONFIGURACIÓN DE EMAILJS (desde archivo separado)
+// ============================================
+import { emailjsConfig, isEmailJsConfigured } from './emailjs-config.js';
+
+// Inicializar EmailJS
+if (isEmailJsConfigured()) {
+  emailjs.init(emailjsConfig.publicKey);
+}
+
+// ============================================
 // VALIDACIÓN Y ENVÍO DE FORMULARIO
 // ============================================
 
 function initFormValidation() {
   const form = document.getElementById('contactForm');
   
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     const name = document.getElementById('name').value.trim();
@@ -665,19 +675,40 @@ function initFormValidation() {
       return;
     }
 
-    // Simular envío
+    // Verificar si EmailJS está configurado
+    if (!isEmailJsConfigured()) {
+      showNotification('⚠️ El servicio de correo no está configurado. Por favor, comunícate directamente a: ' + emailjsConfig.recipientEmail, 'error');
+      return;
+    }
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-      
+    try {
+      const response = await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        {
+          to_email: emailjsConfig.recipientEmail,
+          from_name: name,
+          from_email: email,
+          subject: subject,
+          message: message,
+          reply_to: email
+        }
+      );
+
       showNotification('¡Mensaje enviado exitosamente! Nos comunicaremos pronto.', 'success');
       form.reset();
-    }, 1500);
+    } catch (error) {
+      console.error('Error al enviar:', error);
+      showNotification('Error al enviar el mensaje. Por favor intenta más tarde.', 'error');
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
   });
 }
 
