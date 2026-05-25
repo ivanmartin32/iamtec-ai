@@ -155,6 +155,17 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollEffects();
   initFormValidation();
   initNavbarScroll();
+  
+  // Agregar event listener para el formulario de aceptación de términos
+  const termsForm = document.getElementById('termsAcceptanceForm');
+  if (termsForm) {
+    termsForm.addEventListener('submit', sendTermsAcceptance);
+  }
+  // Agregar event listener para el formulario de aceptación de política de privacidad
+  const privacyForm = document.getElementById('privacyAcceptanceForm');
+  if (privacyForm) {
+    privacyForm.addEventListener('submit', sendPrivacyAcceptance);
+  }
 });
 
 // ============================================
@@ -748,13 +759,243 @@ function showNotification(message, type = 'info') {
 }
 
 // ============================================
+// MODAL DE TÉRMINOS Y CONDICIONES
+// ============================================
+
+function openTermsModal() {
+  const modal = document.getElementById('termsModal');
+  modal.classList.remove('hidden');
+}
+
+function closeTermsModal() {
+  const modal = document.getElementById('termsModal');
+  const form = document.getElementById('termsAcceptanceForm');
+  const buttons = document.getElementById('termsButtons');
+  
+  // Restaurar a estado inicial
+  form.classList.add('hidden');
+  buttons.classList.remove('hidden');
+  form.reset();
+  
+  modal.classList.add('hidden');
+}
+
+function acceptTerms() {
+  const buttons = document.getElementById('termsButtons');
+  const form = document.getElementById('termsAcceptanceForm');
+  
+  // Ocultar botones y mostrar formulario
+  buttons.classList.add('hidden');
+  form.classList.remove('hidden');
+}
+
+function rejectTerms() {
+  closeTermsModal();
+  showNotification('Has rechazado los Términos y Condiciones', 'info');
+}
+
+function cancelAcceptance() {
+  const buttons = document.getElementById('termsButtons');
+  const form = document.getElementById('termsAcceptanceForm');
+  
+  // Restaurar botones y ocultar formulario
+  buttons.classList.remove('hidden');
+  form.classList.add('hidden');
+  form.reset();
+}
+
+async function sendTermsAcceptance(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('acceptanceName').value.trim();
+  const surname = document.getElementById('acceptanceSurname').value.trim();
+  const email = document.getElementById('acceptanceEmail').value.trim();
+  
+  if (!name || !surname || !email) {
+    showNotification('Por favor completa todos los campos', 'error');
+    return;
+  }
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showNotification('Por favor ingresa un email válido', 'error');
+    return;
+  }
+  
+  // Verificar si EmailJS está configurado
+  if (!isEmailJsConfigured()) {
+    showNotification('⚠️ El servicio de correo no está configurado. Por favor, comunícate directamente a: ' + emailjsConfig.recipientEmail, 'error');
+    return;
+  }
+  
+  const submitBtn = document.querySelector('#termsAcceptanceForm button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Enviando...';
+  submitBtn.disabled = true;
+  
+  try {
+    const acceptanceDate = new Date().toLocaleDateString('es-ES', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    
+    const response = await emailjs.send(
+      emailjsConfig.serviceId,
+      emailjsConfig.templateId,
+      {
+        to_email: emailjsConfig.recipientEmail,
+        from_name: name + ' ' + surname,
+        from_email: email,
+        subject: 'Aceptación de Términos y Condiciones - Iamtec',
+        message: `El usuario ha aceptado los Términos y Condiciones de Iamtec.\n\nNombre: ${name}\nApellido: ${surname}\nEmail: ${email}\nFecha de Aceptación: ${acceptanceDate}`,
+        reply_to: email
+      }
+    );
+    
+    showNotification('¡Aceptación registrada exitosamente!', 'success');
+    closeTermsModal();
+  } catch (error) {
+    console.error('Error al enviar:', error);
+    showNotification('Error al registrar la aceptación. Por favor intenta más tarde.', 'error');
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
+}
+
+// ============================================
+// MODAL DE POLÍTICA DE PRIVACIDAD
+// ============================================
+
+function openPrivacyModal() {
+  const modal = document.getElementById('privacyModal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+function closePrivacyModal() {
+  const modal = document.getElementById('privacyModal');
+  const form = document.getElementById('privacyAcceptanceForm');
+  const buttons = document.getElementById('privacyButtons');
+  if (!modal) return;
+
+  // Restaurar a estado inicial
+  if (form) {
+    form.classList.add('hidden');
+    form.reset();
+  }
+  if (buttons) buttons.classList.remove('hidden');
+
+  modal.classList.add('hidden');
+}
+
+function acceptPrivacy() {
+  const buttons = document.getElementById('privacyButtons');
+  const form = document.getElementById('privacyAcceptanceForm');
+  if (!buttons || !form) return;
+
+  buttons.classList.add('hidden');
+  form.classList.remove('hidden');
+}
+
+function rejectPrivacy() {
+  closePrivacyModal();
+  showNotification('Has rechazado la Política de Privacidad', 'info');
+}
+
+function cancelPrivacyAcceptance() {
+  const buttons = document.getElementById('privacyButtons');
+  const form = document.getElementById('privacyAcceptanceForm');
+  if (!buttons || !form) return;
+
+  buttons.classList.remove('hidden');
+  form.classList.add('hidden');
+  form.reset();
+}
+
+async function sendPrivacyAcceptance(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('privacyName')?.value.trim() || '';
+  const surname = document.getElementById('privacySurname')?.value.trim() || '';
+  const email = document.getElementById('privacyEmail')?.value.trim() || '';
+
+  if (!name || !surname || !email) {
+    showNotification('Por favor completa todos los campos', 'error');
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showNotification('Por favor ingresa un email válido', 'error');
+    return;
+  }
+
+  if (!isEmailJsConfigured()) {
+    showNotification('⚠️ El servicio de correo no está configurado. Por favor, comunícate directamente a: ' + emailjsConfig.recipientEmail, 'error');
+    return;
+  }
+
+  const submitBtn = document.querySelector('#privacyAcceptanceForm button[type="submit"]');
+  const originalText = submitBtn ? submitBtn.textContent : 'Enviando...';
+  if (submitBtn) {
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+  }
+
+  try {
+    const acceptanceDate = new Date().toLocaleString('es-ES');
+    const templateVars = {
+      to_email: emailjsConfig.recipientEmail,
+      from_name: name + ' ' + surname,
+      from_email: email,
+      subject: 'Aceptación de Política de Privacidad - Iamtec',
+      message: `El usuario ha aceptado la Política de Privacidad de Iamtec.\n\nNombre: ${name}\nApellido: ${surname}\nEmail: ${email}\nFecha de Aceptación: ${acceptanceDate}`,
+      reply_to: email
+    };
+
+    console.log('Privacy acceptance payload', templateVars);
+
+    const response = await emailjs.send(
+      emailjsConfig.serviceId,
+      emailjsConfig.templateId,
+      templateVars
+    );
+
+    console.log('EmailJS response (privacy):', response);
+    showNotification('¡Aceptación de Política de Privacidad registrada exitosamente!', 'success');
+    closePrivacyModal();
+  } catch (error) {
+    console.error('Error al enviar aceptación de privacidad:', error);
+    showNotification('Error al registrar la aceptación. Por favor intenta más tarde.', 'error');
+  } finally {
+    if (submitBtn) {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  }
+}
+
+// ============================================
 // UTILIDADES
 // ============================================
 
-// Hacer la función closeCourseModal disponible globalmente
+// Hacer las funciones disponibles globalmente
 window.openModal = openModal;
 window.closeCourseModal = closeCourseModal;
 window.closeServiceModal = closeServiceModal;
+window.openTermsModal = openTermsModal;
+window.closeTermsModal = closeTermsModal;
+window.acceptTerms = acceptTerms;
+window.rejectTerms = rejectTerms;
+window.cancelAcceptance = cancelAcceptance;
+window.openPrivacyModal = openPrivacyModal;
+window.closePrivacyModal = closePrivacyModal;
+window.acceptPrivacy = acceptPrivacy;
+window.rejectPrivacy = rejectPrivacy;
+window.cancelPrivacyAcceptance = cancelPrivacyAcceptance;
 
 // Log de inicialización
 console.log('%c🚀 IAMTEC - Landing Page', 'font-size: 20px; color: #0ea5e9; font-weight: bold;');
