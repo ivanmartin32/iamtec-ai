@@ -59,7 +59,7 @@ export const trabajos3d = [
   {
     title: 'Colección de Joyería 3D',
     description: 'Anillos y accesorios de diseño personalizado con acabado premium en resina.',
-    img: 'https://images.pexels.com/photos/15466197/pexels-photo-15466197.jpeg',
+    img: 'https://images.pexels.com/photos/19871842/pexels-photo-19871842.jpeg',
     tag: 'Diseño'
   },
   {
@@ -77,7 +77,7 @@ export const trabajos3d = [
   {
     title: 'Escultura Artística',
     description: 'Obra de arte contemporáneo impresa en resina con acabado y pintura profesional.',
-    img: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80',
+    img: 'https://images.pexels.com/photos/31336812/pexels-photo-31336812.jpeg',
     tag: 'Arte'
   }
 ];

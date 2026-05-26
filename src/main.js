@@ -145,7 +145,15 @@ const serviceActions = {
 // INICIALIZACIÓN
 // ============================================
 
-document.addEventListener('DOMContentLoaded', () => {
+function onDocumentReady(callback) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', callback);
+  } else {
+    callback();
+  }
+}
+
+onDocumentReady(() => {
   initDarkMode();
   initMobileMenu();
   renderNovedades();
@@ -236,6 +244,7 @@ function initMobileMenu() {
 
 function renderCursos() {
   const container = document.getElementById('cursosContainer');
+  if (!container) return;
   
   container.innerHTML = cursos.map(curso => `
     <div class="curso-card bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden group">
@@ -440,6 +449,7 @@ document.addEventListener('keydown', (e) => {
 
 function renderNovedades() {
   const container = document.getElementById('novedadesContainer');
+  if (!container) return;
 
   container.innerHTML = `
     <div class="novedades-carousel relative overflow-hidden">
@@ -556,6 +566,7 @@ function closeNovedadModal() {
 
 function renderTecnologias() {
   const container = document.getElementById('techGrid');
+  if (!container) return;
   
   container.innerHTML = tecnologias.map((tech, index) => `
     <div class="tech-badge" style="animation-delay: ${index * 0.1}s;">
@@ -633,6 +644,7 @@ function initScrollEffects() {
 
 function initNavbarScroll() {
   const navbar = document.getElementById('navbar');
+  if (!navbar) return;
   let lastScrollTop = 0;
 
   window.addEventListener('scroll', () => {
@@ -664,6 +676,7 @@ if (isEmailJsConfigured()) {
 
 function initFormValidation() {
   const form = document.getElementById('contactForm');
+  if (!form) return;
   
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
