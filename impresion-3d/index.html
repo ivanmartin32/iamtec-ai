@@ -7,9 +7,11 @@
   <title>Impresión 3D | IAMTEC</title>
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
-
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <script type="module" crossorigin src="../assets/main-BZ77X2FK.js"></script>
   <link rel="stylesheet" crossorigin href="../assets/main-CrzKjUr9.css">
 </head>
@@ -202,8 +204,35 @@
           <h2 class="text-4xl md:text-5xl font-bold mb-4">Trabajos Realizados</h2>
           <p class="text-xl text-dark-600 dark:text-dark-300">Portafolio de proyectos completados con éxito</p>
         </div>
-
-        <div id="trabajosGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="trabajosGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div id="projectModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop bg-black/60"
+      aria-hidden="true">
+      <div role="dialog" aria-modal="true" aria-labelledby="projectModalTitle"
+        class="bg-white dark:bg-dark-700 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div class="flex justify-between items-start gap-4 p-6 border-b border-dark-200 dark:border-dark-600">
+          <div>
+            <p id="projectModalTag" class="text-xs uppercase tracking-[0.24em] text-primary-500 mb-2"></p>
+            <h2 id="projectModalTitle" class="text-3xl font-bold"></h2>
+          </div>
+          <button id="projectModalClose" type="button" class="text-dark-500 hover:text-dark-700 dark:hover:text-dark-300"
+            aria-label="Cerrar información del trabajo">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <div class="p-6">
+          <img id="projectModalImage" src="" alt="" class="w-full h-64 object-cover rounded-lg mb-6">
+          <p id="projectModalDescription" class="text-lg text-dark-600 dark:text-dark-300 mb-6"></p>
+          <div id="projectModalDetails" class="grid gap-3 sm:grid-cols-2"></div>
+        </div>
+        <div class="p-6 border-t border-dark-200 dark:border-dark-600">
+          <button id="projectModalContact" type="button"
+            class="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
+            Consultar por un proyecto similar
+          </button>
+        </div>
+      </div>
+    </div>
+        </div>
       </div>
     </section>
 
@@ -555,10 +584,64 @@
         </div>
       </div>
     </div>
-
-
-
-
+    
 </body>
+
+<script>
+  window.addEventListener('load', function () {
+    const projects = [
+      { title: 'Pieza Industrial Personalizada', description: 'Componente funcional para maquinaria especializada fabricado en nylon industrial.', img: 'https://images.pexels.com/photos/31121900/pexels-photo-31121900.jpeg', tag: 'Ingeniería', details: ['Nylon industrial', 'Diseño funcional', 'Validación dimensional'] },
+      { title: 'Prototipo de Electrodoméstico', description: 'Prototipo funcional para validar el diseño ergonómico y mecánico de un nuevo producto.', img: 'https://images.pexels.com/photos/9242925/pexels-photo-9242925.jpeg', tag: 'Producto', details: ['Prototipado rápido', 'Pruebas ergonómicas', 'Iteración de diseño'] },
+      { title: 'Colección de Joyería 3D', description: 'Anillos y accesorios de diseño personalizado con acabado premium en resina.', img: 'https://images.pexels.com/photos/19871842/pexels-photo-19871842.jpeg', tag: 'Diseño', details: ['Resina de alta definición', 'Modelado personalizado', 'Acabado premium'] },
+      { title: 'Modelo Arquitectónico', description: 'Maqueta a escala de un proyecto residencial para presentar a inversores y clientes.', img: 'https://images.pexels.com/photos/29148783/pexels-photo-29148783.jpeg', tag: 'Arquitectura', details: ['Maqueta a escala', 'Detalle arquitectónico', 'Presentación profesional'] },
+      { title: 'Componentes Robóticos', description: 'Piezas de precisión para un brazo robótico educativo fabricadas en PLA reforzado.', img: 'https://images.pexels.com/photos/8294615/pexels-photo-8294615.jpeg', tag: 'Robótica', details: ['PLA reforzado', 'Piezas de precisión', 'Ensamble funcional'] },
+      { title: 'Escultura Artística', description: 'Obra de arte contemporáneo impresa en resina con acabado y pintura profesional.', img: 'https://images.pexels.com/photos/31336812/pexels-photo-31336812.jpeg', tag: 'Arte', details: ['Impresión en resina', 'Pintura profesional', 'Pieza personalizada'] }
+    ];
+    const grid = document.getElementById('trabajosGrid');
+    const modal = document.getElementById('projectModal');
+
+    grid.innerHTML = projects.map(function (project, index) {
+      return '<article class="project-card group relative bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 focus-within:ring-2 focus-within:ring-primary-500">' +
+        '<div class="relative overflow-hidden h-64"><img src="' + project.img + '" alt="' + project.title + '" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"><div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>' +
+        '<div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent"><span class="text-sm font-semibold text-cyan-300">' + project.tag + '</span></div>' +
+        '<div class="absolute inset-0 flex flex-col justify-end p-6 bg-dark-900/90 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300"><p class="text-sm text-white/90 mb-4">' + project.details.join(' · ') + '</p><button type="button" data-project="' + index + '" class="w-full px-4 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors">Ver más información</button></div></div>' +
+        '<div class="p-6"><h3 class="text-xl font-bold mb-2">' + project.title + '</h3><p class="text-dark-600 dark:text-dark-300">' + project.description + '</p></div></article>';
+    }).join('');
+
+    function closeProjectModal() {
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    document.querySelectorAll('[data-project]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        const project = projects[Number(button.dataset.project)];
+        document.getElementById('projectModalTag').textContent = project.tag;
+        document.getElementById('projectModalTitle').textContent = project.title;
+        document.getElementById('projectModalDescription').textContent = project.description;
+        document.getElementById('projectModalImage').src = project.img;
+        document.getElementById('projectModalImage').alt = project.title;
+        document.getElementById('projectModalDetails').innerHTML = project.details.map(function (detail) {
+          return '<div class="bg-primary-50 dark:bg-dark-600 p-4 rounded-lg text-sm font-semibold text-primary-700 dark:text-primary-300">' + detail + '</div>';
+        }).join('');
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+    document.getElementById('projectModalClose').addEventListener('click', closeProjectModal);
+    document.getElementById('projectModalContact').addEventListener('click', function () {
+      closeProjectModal();
+      document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    });
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) closeProjectModal();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeProjectModal();
+    });
+  });
+</script>
 
 </html>
