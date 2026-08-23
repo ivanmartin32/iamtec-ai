@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impresión 3D | IAMTEC</title>
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
-  <link rel="stylesheet" href="../src/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script></head>
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>  <script type="module" crossorigin src="/iamtec-ai/assets/impresion-B-wUjWRF.js"></script>
+  <link rel="modulepreload" crossorigin href="/iamtec-ai/assets/main-BlXCmi3t.js">
+  <link rel="stylesheet" crossorigin href="/iamtec-ai/assets/main-CrzKjUr9.css">
+</head>
 
 <body class="bg-white dark:bg-dark-900 text-dark-900 dark:text-white transition-colors duration-300">
   <div id="app">
@@ -20,7 +22,7 @@
           <!-- Estructura del Logo -->
           <div class="flex items-center space-x-2">
             <a href="../" class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
-              <img src="../src/image/logo.png" alt="iamtec" class="h-14 w-auto">
+              <img src="/iamtec-ai/assets/logo-CgaFU_Kh.png" alt="iamtec" class="h-14 w-auto">
             </a>
           </div>
 
@@ -100,7 +102,7 @@
 
           <!-- Ilustración Hero -->
           <div class="fade-in-element animation-delay-200">
-            <video src="../src/video/Impresion-3d.mp4" autoplay muted loop class="rounded-lg shadow-2xl"></video>
+            <video src="/iamtec-ai/assets/Impresion-3d-CMrdy3a7.mp4" autoplay muted loop class="rounded-lg shadow-2xl"></video>
           </div>
         </div>
       </div>
@@ -313,7 +315,7 @@
         <div class="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div class="text-2xl font-bold bg-gradient-to-r from-primary-500 to-cyan-500 bg-clip-text text-transparent">
-              <img src="../src/image/logo.png" alt="iamtec" class="h-14 w-auto">
+              <img src="/iamtec-ai/assets/logo-CgaFU_Kh.png" alt="iamtec" class="h-14 w-auto">
             </div>
             <p class="text-dark-400">Tecnología, Innovación y Aprendizaje...</p>
           </div>
@@ -551,131 +553,8 @@
         </div>
       </div>
     </div>
-
-    <script type="module" src="../src/main.js"></script>
-
-  <script type="module">
-    import { servicios3d, trabajos3d, serviceDetails3d } from '../src/impresion3d.js';
-
-    const serviciosGrid = document.getElementById('serviciosGrid');
-    const trabajosGrid = document.getElementById('trabajosGrid');
-
-    function createServiceCard(service) {
-      return `
-        <div class="service-card-3d group bg-white dark:bg-dark-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-          <img src="${service.img}"
-            alt="${service.title}" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-3">${service.title}</h3>
-            <p class="text-dark-600 dark:text-dark-300 mb-6">${service.description}</p>
-            <button type="button" data-service="${service.id}"
-              class="w-full px-4 py-2 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg transition-all">
-              ${service.buttonLabel}
-            </button>
-          </div>
-        </div>
-      `;
-    }
-
-    function createTrabajoCard(trabajo) {
-      return `
-        <div class="project-card bg-white dark:bg-dark-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
-          <div class="relative overflow-hidden h-64">
-            <img src="${trabajo.img}"
-              alt="${trabajo.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2">${trabajo.title}</h3>
-            <p class="text-dark-600 dark:text-dark-300 mb-4">${trabajo.description}</p>
-            <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-dark-700 text-primary-700 dark:text-primary-300 rounded-full text-sm">${trabajo.tag}</span>
-          </div>
-        </div>
-      `;
-    }
-
-    function renderServicios() {
-      serviciosGrid.innerHTML = servicios3d.map(createServiceCard).join('');
-    }
-
-    function renderTrabajos() {
-      trabajosGrid.innerHTML = trabajos3d.map(createTrabajoCard).join('');
-    }
-
-    function init3dServices() {
-      document.querySelectorAll('[data-service]').forEach(button => {
-        button.addEventListener('click', (e) => {
-          e.preventDefault();
-          const actionKey = button.dataset.service;
-          const service = serviceDetails3d[actionKey];
-          if (!service) return;
-
-          const modal = document.getElementById('service3dModal');
-          modal.querySelector('#service3dModalTitle').textContent = service.title;
-          modal.querySelector('#service3dModalDescription').textContent = service.description;
-
-          const body = modal.querySelector('#service3dModalBody');
-          body.innerHTML = `
-            <div class="grid gap-3 md:grid-cols-2">
-              ${service.details.map(detail => `
-                <div class="bg-primary-50 dark:bg-dark-600 p-4 rounded-2xl">
-                  <p class="text-sm font-semibold text-primary-700 dark:text-primary-300">${detail.label}</p>
-                  <p class="text-sm text-dark-500 dark:text-dark-300">${detail.value}</p>
-                </div>
-              `).join('')}
-            </div>
-          `;
-
-          modal.setAttribute('aria-hidden', 'false');
-          modal.classList.remove('hidden');
-          document.body.classList.add('overflow-hidden');
-        });
-      });
-    }
-
-    function closeService3dModal() {
-      const modal = document.getElementById('service3dModal');
-      modal.setAttribute('aria-hidden', 'true');
-      modal.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
-    }
-
-    function handleContactNow() {
-      closeService3dModal();
-      const contactoSection = document.getElementById('contacto');
-      if (contactoSection) {
-        contactoSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    document.addEventListener('click', (e) => {
-      const modal = document.getElementById('service3dModal');
-      if (e.target === modal) {
-        closeService3dModal();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeService3dModal();
-      }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-      renderServicios();
-      renderTrabajos();
-      init3dServices();
-
-      const closeBtn = document.getElementById('service3dModalCloseBtn');
-      const contactBtn = document.getElementById('service3dModalContactBtn');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeService3dModal);
-      }
-      if (contactBtn) {
-        contactBtn.addEventListener('click', handleContactNow);
-      }
-    });
-  </script>
+
+
 </body>
 
 </html>
