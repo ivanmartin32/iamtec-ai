@@ -7,8 +7,10 @@
   <title>Cursos IAMTEC</title>
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <script type="module" crossorigin src="../assets/main-BZ77X2FK.js"></script>
   <link rel="stylesheet" crossorigin href="../assets/main-CrzKjUr9.css">
 </head>
@@ -80,7 +82,9 @@
         </div>
       </div>
     </section>
-
+    
+    <!--Seccion Cursos-->
+    
     <section id="cursos" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-50 dark:bg-dark-900">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
@@ -114,9 +118,123 @@
             </select>
           </div>
         </div>
-        <div id="courseCatalog" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
+        <div id="courseCatalog" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const courses = [
+        { title: 'Excel y Google Sheets', description: 'Aprende a dominar Excel y Google Sheets para análisis de datos y automatización de tareas.', level: 'Principiante', duration: '8 semanas', price: '$20.000', image: 'https://lh3.googleusercontent.com/u/0/d/1UZwavgP4g6o4MYSVoSsUw7D35qJR-xo-', mediaType: 'image' },
+        { title: 'Inteligencia Artificial', description: 'Descubre cómo la IA puede mejorar tu día con aplicaciones prácticas y fáciles de implementar.', level: 'Principiante', duration: '8 semanas', price: '$30.000', image: 'https://lh3.googleusercontent.com/u/0/d/1GJxb4yqgRjjcVsZUC7r7F9Efk0iEwd_D', mediaType: 'image' },
+        { title: 'Diseño Gráfico con Canva', description: 'Aprende a crear diseños profesionales con Canva para tu negocio.', level: 'Intermedio', duration: '4 semanas', price: '$25.000', image: 'https://lh3.googleusercontent.com/u/0/d/1xTR1KNwB2temvLBD39Gr6lWvB1kCwCuK', mediaType: 'image' },
+        { title: 'Ciberseguridad y Privacidad', description: 'Protege tu información personal y profesional con prácticas de ciberseguridad efectivas.', level: 'Principiante', duration: '6 semanas', price: '$35.000', image: 'https://lh3.googleusercontent.com/u/0/d/1N-AzTdMecINCoqbffOwS6PQpoNS0sTdY', mediaType: 'image' },
+        { title: 'Programación Inicial con Python', description: 'Fundamentos de programación con Python, estructuras de datos y buenas prácticas.', level: 'Intermedio', duration: '8 semanas', price: '$29.000', image: 'https://lh3.googleusercontent.com/u/0/d/1g3cwEeZd73vuxqNOuB2pb6_j2TpqGFQW', mediaType: 'image' },
+        { title: 'Desarrollo Web Inicial', description: 'Aprende a crear tu primera página web con HTML, CSS y JavaScript.', level: 'Intermedio', duration: '10 semanas', price: '$39.000', image: 'https://lh3.googleusercontent.com/u/0/d/1fBzL5cl93TbYuotm7aKF_2aw3gBL71Z7', mediaType: 'image' },
+        { title: 'Educación Financiera', description: 'Aprende a gestionar tus finanzas personales y a invertir de manera inteligente.', level: 'Principiante', duration: '6 semanas', price: '$15.900', image: 'https://lh3.googleusercontent.com/u/0/d/1p7IZTsU_jPqXE2MnyVHvA-_MUIPvZ0VM', mediaType: 'image' },
+        { title: 'Informatica desde Cero', description: 'En este curso vas a conocer el manejo básico de Windows y herramientas fundamentales.', level: 'Principiante', duration: '4 semanas', price: '$19.900', image: 'https://lh3.googleusercontent.com/u/0/d/1r2VDEIj6ZRWFtbiVqt_7ZuRv6M69flm_', mediaType: 'image' },
+        { title: 'Herramientas en la Nube', description: 'Aprende a utilizar herramientas en la nube como Google Drive para mejorar tu productividad.', level: 'Principiante', duration: '8 semanas', price: '$11.900', image: 'https://lh3.googleusercontent.com/u/0/d/1urafJSekGTIR6Nopfo3UYNmGaEg_Rg9i', mediaType: 'image' },
+        { title: 'Word y PowerPoint Inicial', description: 'Aprende a crear documentos y presentaciones profesionales con Word y PowerPoint.', level: 'Principiante', duration: '6 semanas', price: '$17.900', image: 'https://lh3.googleusercontent.com/u/0/d/14jk-aiPXqdNrESdUH91CKSaaKunDvmGc', mediaType: 'image' },
+        { title: 'Disciplina y Productividad', description: 'Aprende técnicas de disciplina y productividad para alcanzar tus metas personales y profesionales.', level: 'Principiante', duration: '4 semanas', price: '$9.900', image: 'https://lh3.googleusercontent.com/u/0/d/1iZSsraEcwiqzvRth5uVU74bha-fVK_XZ', mediaType: 'image' },
+        { title: 'Uso de Celular Inicial', description: 'Aprende a utilizar tu celular de manera eficiente para mejorar tu comunicación y productividad.', level: 'Principiante', duration: '4 semanas', price: '$9.900', image: 'https://lh3.googleusercontent.com/u/0/d/14UdwyJ8SeFe_YTPltgFD-CHhH4dgSVut', mediaType: 'image' }
+      ];
+      const catalog = document.getElementById('courseCatalog');
+      const search = document.getElementById('courseSearch');
+      const sort = document.getElementById('courseSort');
+      const level = document.getElementById('courseLevel');
+
+      function renderCourses() {
+        const searchTerm = search.value.trim().toLocaleLowerCase();
+        const selectedLevel = level.value;
+        const visibleCourses = courses
+          .filter(function (course) {
+            return course.title.toLocaleLowerCase().includes(searchTerm) &&
+              (selectedLevel === 'todos' || course.level === selectedLevel);
+          })
+          .sort(function (first, second) {
+            const comparison = first.title.localeCompare(second.title, 'es');
+            return sort.value === 'desc' ? -comparison : comparison;
+          });
+
+        catalog.innerHTML = visibleCourses.length ? visibleCourses.map(function (course) {
+          const media = course.mediaType === 'video'
+            ? '<video src="' + course.image + '" muted autoplay loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" aria-label="' + course.title + '"></video>'
+            : '<img src="' + course.image + '" alt="' + course.title + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">';
+          return '<article class="curso-card bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden group">' +
+            '<div class="relative h-48 overflow-hidden bg-dark-600">' + media + '</div>' +
+            '<div class="p-6"><h3 class="text-xl font-bold mb-3">' + course.title + '</h3><p class="text-dark-600 dark:text-dark-300 text-sm mb-5">' + course.description + '</p>' +
+            '<div class="flex items-center justify-between gap-1 text-sm mb-4"><span class="px-3 py-1 bg-primary-100 dark:bg-dark-600 text-primary-700 dark:text-primary-300 rounded-full">' + course.level + '</span><span class="text-primary-600 dark:text-primary-400 font-semibold">' + course.price + '</span></div>' +
+            '<p class="text-sm text-dark-500 dark:text-dark-400"><i class="fas fa-clock mr-1" aria-hidden="true"></i>' + course.duration + '</p><button type="button" data-course="' + course.title + '" class="px-4 py-2 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all w-full mt-4">Ver Detalles</button></div></article>';
+        }).join('') : '<p class="md:col-span-2 lg:col-span-3 text-center text-dark-600 dark:text-dark-300 py-10">No encontramos cursos con esos criterios.</p>';
+      }
+
+      [search, sort, level].forEach(function (control) {
+        control.addEventListener('input', renderCourses);
+        control.addEventListener('change', renderCourses);
+      });
+
+      catalog.addEventListener('click', function (event) {
+        const button = event.target.closest('[data-course]');
+        if (!button) return;
+        const course = courses.find(function (item) {
+          return item.title === button.dataset.course;
+        });
+        if (!course) return;
+        document.getElementById('courseModalTitle').textContent = course.title;
+        document.getElementById('courseModalDescription').textContent = course.description;
+        document.getElementById('courseModalDuration').textContent = course.duration;
+        document.getElementById('courseModalLevel').textContent = course.level;
+        document.getElementById('courseModalPrice').textContent = course.price;
+        document.getElementById('courseModal').classList.remove('hidden');
+        document.getElementById('courseModal').setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+      });
+
+      function closeCourseModal() {
+        const modal = document.getElementById('courseModal');
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      document.getElementById('courseModalClose').addEventListener('click', closeCourseModal);
+      document.getElementById('courseModal').addEventListener('click', function (event) {
+        if (event.target.id === 'courseModal') closeCourseModal();
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeCourseModal();
+      });
+      renderCourses();
+    });
+  </script>
+        </div>
       </div>
     </section>
+
+    <!--Modal de cursos-->
+
+    <div id="courseModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 modal-backdrop"
+      aria-hidden="true">
+      <div role="dialog" aria-modal="true" aria-labelledby="courseModalTitle"
+        class="bg-dark-700 text-white rounded-xl max-w-3xl w-full shadow-2xl overflow-hidden">
+        <div class="flex items-start justify-between gap-4 p-6 border-b border-dark-600">
+          <h2 id="courseModalTitle" class="text-3xl font-bold"></h2>
+          <button id="courseModalClose" type="button" class="text-dark-400 hover:text-white transition-colors"
+            aria-label="Cerrar detalles del curso">
+            <i class="fas fa-times text-2xl" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="p-6">
+          <p id="courseModalDescription" class="text-lg text-primary-500 leading-relaxed mb-6"></p>
+          <div class="grid gap-3 sm:grid-cols-3 bg-dark-600 rounded-xl p-6 text-lg mb-6">
+            <p><strong class="text-primary-500">Duración:</strong> <span id="courseModalDuration"></span></p>
+            <p><strong class="text-primary-500">Nivel:</strong> <span id="courseModalLevel"></span></p>
+            <p><strong class="text-primary-500">Precio:</strong> <span id="courseModalPrice"></span></p>
+          </div>
+          <a href="https://app.iamtec.com/registro" target="_blank"
+            class="block w-full px-6 py-4 bg-gradient-to-r from-primary-500 to-cyan-500 text-white rounded-lg text-center text-xl font-semibold hover:shadow-lg transition-all">
+            Inscribirse
+          </a>
+        </div>
+      </div>
+    </div>
 
     <section id="instructores" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-dark-800">
       <div class="max-w-7xl mx-auto">
@@ -473,6 +591,7 @@
       if(!window.closePrivacyModal) window.closePrivacyModal = closePrivacyModalFallback;
     })();
   </script>
+
 </body>
 
 </html>
