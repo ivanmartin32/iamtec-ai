@@ -7,9 +7,11 @@
   <title>Desarrollo Web | IAMTEC</title>
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%230ea5e9'>◆</text></svg>">
-
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <script type="module" crossorigin src="../assets/main-BZ77X2FK.js"></script>
   <link rel="stylesheet" crossorigin href="../assets/main-CrzKjUr9.css">
 </head>
@@ -124,8 +126,47 @@
           <p class="text-xl text-dark-600 dark:text-dark-300">Construimos experiencias web a medida, seguras, accesibles
             y escalables</p>
         </div>
+        <div id="desarrolloCatalog" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <script>
+            const services = [
+              {
+                title: "Desarrollo Full Stack",
+                description: "Creamos aplicaciones web completas, desde la interfaz de usuario hasta la lógica del servidor y la base de datos.",
+                image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
+                highlights: ['React', 'Node.js', 'APIs REST']
+              },
+              {
+                title: "E-commerce",
+                description: "Diseñamos tiendas online personalizadas, optimizadas para conversiones y con integración de pagos seguros.",
+                image: "https://images.pexels.com/photos/7667442/pexels-photo-7667442.jpeg",
+                highlights: ['Vue', 'Stripe', 'UX móvil']
+              },
+              {
+                title: "Plataformas Web",
+                description: "Desarrollamos plataformas web escalables para empresas, con funcionalidades avanzadas y experiencia de usuario optimizada.",
+                image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&q=80",
+                highlights: ['Next.js', 'Firebase', 'Accesos por roles']
+              }
+            ];
 
-        <div id="developmentServices" class="grid md:grid-cols-3 gap-8"></div>
+            const catalog = document.getElementById("desarrolloCatalog");
+            catalog.innerHTML = services.map(service => `
+              <div class="service-card bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden group">
+                <div class="relative h-48 overflow-hidden bg-dark-600">
+                  <img src="${service.image}" alt="${service.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-3">${service.title}</h3>
+                  <p class="text-dark-600 dark:text-dark-300 text-sm">${service.description}</p>
+                  <div class="flex items-center text-sm mb-4 mt-4 gap-2 flex-wrap">
+                    ${service.highlights.map(highlight => `<span class="px-3 py-1 bg-primary-100 dark:bg-dark-600 text-primary-700 dark:text-primary-300 rounded-full">${highlight}</span>`).join('')}
+                  </div>
+                </div>
+              </div>
+            `).join('');
+          </script>
+        </div>
+        
       </div>
     </section>
 
@@ -137,7 +178,56 @@
           <p class="text-xl text-dark-600 dark:text-dark-300">Aplicaciones con acceso Login / Registro para usuarios</p>
         </div>
 
-        <div id="developmentApps" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        <div id="developmentApps" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <script>
+            const app = [
+              {
+                name: 'ComerciAR',
+                image: '../assets/logo_comerciar.jpg',
+                category: 'Web App Comercial',
+                description: 'Portal web diseñado para administrar produccion, stock, proveedores y clientes de manera eficiente con sistema de caja incorporado.',
+                technologies: 'Node Js, React, Tailwind CSS',
+                loginUrl: 'https://app.innovariamtec.com/Comerciar/login',
+                testimonial: '“Con su dashboard Mejoró los tiempos y eficiencia operativa de los comercios adheridos.”'
+              },
+              {
+                name: 'FairPlay',
+                image: '../assets/logo_fairplay.png',
+                category: 'Web App Social',
+                description: 'Plataforma web para la gestión de turnos, torneos y ligas deportivas, con registro de jugadores y notificaciones en tiempo real.',
+                technologies: 'Node Js, Vite, Tailwind CSS',
+                loginUrl: 'https://tienda.innovariamtec.com/FairPlay/login',
+                testimonial: '“Facilita la organización y gestión de turnos y torneos deportivos.”'
+
+              },
+              {
+                name: 'PactoAgro',
+                image: '../assets/logo_pactoagro1.jpg',
+                category: 'Web App E-Commerce',
+                description: 'Plataforma de publicacion de compra, venta y servicios agropecuarios, con gestión de publicaciones y seguimiento de transacciones.',
+                technologies: 'Node Js, Vite, Tailwind CSS',
+                loginUrl: 'https://tienda.innovariamtec.com/pactoagro/login',
+                testimonial: '“Entorno intuitivo y eficiente para la gestión de compra/venta y servicios agropecuarios.”'
+
+              }
+            ];
+
+            const appsContainer = document.getElementById("developmentApps");
+            appsContainer.innerHTML = app.map(app => `
+              <div class="app-card bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden group">
+                <div class="relative h-48 overflow-hidden bg-dark-600">
+                  <img src="${app.image}" alt="${app.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold mb-3">${app.name}</h3>
+                  <p class="text-dark-600 dark:text-dark-300 text-sm mb-4"><strong>Categoría:</strong> ${app.category}</p>
+                  <p class="text-dark-600 dark:text-dark-300 text-sm">${app.description}</p>
+                  <a href="${app.loginUrl}" class="mt-4 inline-block px-4 py-2 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all">Iniciar Sesión</a>
+                </div>
+              </div>
+            `).join('');
+          </script> 
+        </div>
       </div>
     </section>
 

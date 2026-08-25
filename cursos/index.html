@@ -154,12 +154,12 @@
           });
 
         catalog.innerHTML = visibleCourses.length ? visibleCourses.map(function (course) {
-          const media = course.mediaType === 'video'
-            ? '<video src="' + course.image + '" muted autoplay loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" aria-label="' + course.title + '"></video>'
-            : '<img src="' + course.image + '" alt="' + course.title + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">';
+          const media = course.mediaType === 'image'
+            ? '<img src="' + course.image + '" alt="' + course.title + '" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">'
+            : '<video src="' + course.image + '" muted autoplay loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" aria-label="' + course.title + '"></video>';
           return '<article class="curso-card bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden group">' +
             '<div class="relative h-48 overflow-hidden bg-dark-600">' + media + '</div>' +
-            '<div class="p-6"><h3 class="text-xl font-bold mb-3">' + course.title + '</h3><p class="text-dark-600 dark:text-dark-300 text-sm mb-5">' + course.description + '</p>' +
+            '<div class="p-6"><h3 class="text-xl font-bold mb-3">' + course.title + '</h3><p class="py-2 text-dark-600 dark:text-dark-300 text-sm mb-5">' + course.description + '</p>' +
             '<div class="flex items-center justify-between gap-1 text-sm mb-4"><span class="px-3 py-1 bg-primary-100 dark:bg-dark-600 text-primary-700 dark:text-primary-300 rounded-full">' + course.level + '</span><span class="text-primary-600 dark:text-primary-400 font-semibold">' + course.price + '</span></div>' +
             '<p class="text-sm text-dark-500 dark:text-dark-400"><i class="fas fa-clock mr-1" aria-hidden="true"></i>' + course.duration + '</p><button type="button" data-course="' + course.title + '" class="px-4 py-2 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-all w-full mt-4">Ver Detalles</button></div></article>';
         }).join('') : '<p class="md:col-span-2 lg:col-span-3 text-center text-dark-600 dark:text-dark-300 py-10">No encontramos cursos con esos criterios.</p>';
